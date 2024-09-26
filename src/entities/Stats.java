@@ -1,4 +1,4 @@
-package rpg.entities;
+package entities;
 
 public enum Stats {
 

@@ -1,4 +1,4 @@
-package rpg.enums;
+package enums;
 
 public enum Player {
 }

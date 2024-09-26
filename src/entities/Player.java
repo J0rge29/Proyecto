@@ -1,4 +1,4 @@
-package rpg.entities;
+package entities;
 
 import javax.swing.*;
 import java.util.HashMap;
