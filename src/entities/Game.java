@@ -1,5 +1,7 @@
 package entities;
 
+import entities.enemies.Enemy;
+
 import javax.swing.*;
 
 public class Game {

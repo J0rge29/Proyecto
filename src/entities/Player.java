@@ -1,5 +1,8 @@
 package entities;
 
+import entities.enemies.Enemy;
+import enums.Stats;
+
 import javax.swing.*;
 import java.util.HashMap;
 

@@ -1,12 +1,15 @@
-package entities;
+package entities.enemies;
+
+import entities.Player;
+import enums.Stats;
 
 import javax.swing.*;
 import java.util.HashMap;
 
 public class Enemy {
 
-    private String name;
-    private HashMap<Stats, Integer> stats;
+    protected String name;
+    protected HashMap<Stats, Integer> stats;
 
     public Enemy(String name) {
         this.name = name;
