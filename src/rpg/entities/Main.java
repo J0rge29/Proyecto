@@ -1,6 +1,8 @@
 
-package entities;
+package rpg.entities;
 import entities.enemies.Enemy;
+
+import rpg.entities.enemies.Enemy;
 
 import java.util.Random;
 import javax.swing.JOptionPane;

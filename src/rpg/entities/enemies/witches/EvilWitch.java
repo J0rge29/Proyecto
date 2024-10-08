@@ -1,7 +1,9 @@
-package entities.enemies.witches;
-import entities.GameCharacter;
-import entities.enemies.Enemy;
-import enums.Stats;
+package rpg.entities.enemies.witches;
+
+
+import rpg.entities.GameCharacter;
+import rpg.entities.enemies.Enemy;
+import rpg.enums.Stats;
 
 public class EvilWitch extends Enemy {
 
@@ -40,6 +42,7 @@ public class EvilWitch extends Enemy {
         System.out.println(this.name + " lanza un hechizo débil " + enemy.getName() + " provocando " + damage + " de daño!");
         System.out.println(enemy.getName() + " tiene " + enemy.getStats().get(Stats.HP) + " HP restante.");
     }
+
     @Override
     public void attack(GameCharacter enemy) {
         if (Math.random() < 0.5) {

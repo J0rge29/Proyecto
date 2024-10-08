@@ -1,6 +1,7 @@
-package entities;
+package rpg.entities;
 
-import entities.enemies.Enemy;
+import rpg.entities.enemies.Enemy;
+import rpg.entities.enemies.witches.EvilWitch;
 
 import javax.swing.*;
 
@@ -12,7 +13,7 @@ public class Game {
     private Enemy enemy;
 
     public Game() {
-        this.enemy = new Enemy("Goblin");
+        this.enemy = new EvilWitch();
         this.player = new Player("Hero");
     }
 

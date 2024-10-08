@@ -1,18 +1,19 @@
-package entities.enemies;
+package rpg.entities.enemies;
 
-import entities.Player;
-import enums.Stats;
+import rpg.entities.GameCharacter;
+import rpg.entities.Player;
+import rpg.enums.Stats;
 
 import javax.swing.*;
 import java.util.HashMap;
 
-public class Enemy {
+public class Enemy extends GameCharacter {
 
     protected String name;
     protected HashMap<Stats, Integer> stats;
 
     public Enemy(String name) {
-        this.name = name;
+        super(name);
         this.stats = new HashMap<>();
         /**
          *	Inicialización de estadísticas con valores por defecto
