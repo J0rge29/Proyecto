@@ -4,6 +4,7 @@ package rpg.entities.enemies.witches;
 import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
+import rpg.enums.EnemyType;
 
 public class EvilWitch extends Enemy {
 
@@ -13,6 +14,8 @@ public class EvilWitch extends Enemy {
 
     public EvilWitch() {
         super("Evil Witch");
+        this.enemyType.put(EnemyType.SECRET);
+
         this.stats.put(Stats.MAX_HP, 40);
         this.stats.put(Stats.HP, 40);
         this.stats.put(Stats.ATTACK, 10);

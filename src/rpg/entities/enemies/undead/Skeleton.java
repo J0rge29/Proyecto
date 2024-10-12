@@ -3,11 +3,12 @@ import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
 import rpg.utils.Randomize;
+import rpg.enums.EnemyType;
 
 public class Skeleton extends Enemy {
 
     public Skeleton() {
-        super();
+        super("Skeleton");
         this.name = "Skeleton";
         this.stats.put(Stats.MAX_HP, 45);
         this.stats.put(Stats.HP, 45);
