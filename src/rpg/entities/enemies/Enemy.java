@@ -3,7 +3,6 @@ package rpg.entities.enemies;
 import rpg.entities.GameCharacter;
 import rpg.entities.Player;
 import rpg.enums.Stats;
-import rpg.enums.EnemyType;
 
 import javax.swing.*;
 import java.util.HashMap;
