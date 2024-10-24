@@ -1,9 +1,12 @@
 package rpg.entities;
 import rpg.enums.Stats;
 
+import javax.swing.*;
 import java.util.HashMap;
 
 public class GameCharacter {
+
+
 
     protected String name;
 
@@ -53,4 +56,13 @@ public class GameCharacter {
     public HashMap<Stats, Integer> getStats() {
         return stats;
     }
+
+
+
+
+
+
+
+
+
 }
