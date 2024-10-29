@@ -13,7 +13,8 @@ public class Game {
     private Enemy enemy;
 
     public Game() {
-        this.enemy = new EvilWitch();
+        this.enemy = new Enemy("EvilWitch");
+        this.enemy = new Enemy("Skeleton");
         this.player = new Player("Hero");
     }
 

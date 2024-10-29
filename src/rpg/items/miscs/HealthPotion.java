@@ -1,16 +1,15 @@
-package rpg.items.misc;
+package rpg.items.miscs;
 
 import rpg.items.Item;
 import rpg.enums.ItemType;
 
 public class HealthPotion extends Item {
-
-    @Override
+    protected ItemType itemType;
     protected void initItem() {
         this.name = "Health Potion";
         this.description = "Restores 50 health points.";
         this.price = 10;
-        this.type = ItemType.MISC;
+        this.itemType = ItemType.MISC;
     }
 
     public void use() {

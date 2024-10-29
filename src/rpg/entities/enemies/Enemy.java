@@ -3,6 +3,8 @@ package rpg.entities.enemies;
 import rpg.entities.GameCharacter;
 import rpg.entities.Player;
 import rpg.enums.Stats;
+import rpg.enums.EnemyType;
+import rpg.utils.Randomize;
 
 import javax.swing.*;
 import java.util.HashMap;
@@ -11,6 +13,7 @@ public class Enemy extends GameCharacter {
 
     protected String name;
     protected HashMap<Stats, Integer> stats;
+    protected EnemyType type;
 
     public Enemy(String name) {
         super(name);
@@ -38,6 +41,10 @@ public class Enemy extends GameCharacter {
 
     public HashMap<Stats, Integer> getStats() {
         return stats;
+    }
+
+    public String getEnemyType(){
+        return type.name();
     }
 
     public boolean isAlive() {
