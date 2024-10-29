@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/rpg/items/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/Equipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.form" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

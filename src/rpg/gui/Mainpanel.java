@@ -1,4 +1,7 @@
 package rpg.gui;
 
-public class Mainpanel {
+import javax.swing.*;
+
+public class Mainpanel extends JFrame {
+    private JPanel Mainpanel;
 }
