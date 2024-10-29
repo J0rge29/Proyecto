@@ -7,8 +7,8 @@ import rpg.enums.Stats;
 import java.util.HashMap;
 
 public class ShortSword extends Equipment {
+    protected ItemType type;
 
-    @Override
     protected void initItem() {
         this.name = "Espada Corta";
         this.description = "Espada basica. Ideal para ataques rapidos.";

@@ -8,12 +8,15 @@ import java.util.HashMap;
 
 public abstract class Armor extends Equipment {
     protected ArmorType armorType;
+    protected ItemType type;
     protected int durability;
     protected HashMap<String, Integer> elementalResistance;
 
-    public Armor(String name, String description, int price, ArmorType armorType, int durability) {
-        super(name, description, price, ItemType.ARMOR);
-        this.armorType = armorType;
+    public Armor(String name, String description, int price, ArmorType armorType, int durability){
+        this.name = "leather armor";
+        this.description = "ideal para ataques cuerpo a cuerpo";
+        this.price = 50;
+        this.armorType= ArmorType.HELMET;
         this.durability = durability;
         this.elementalResistance = new HashMap<>();
     }

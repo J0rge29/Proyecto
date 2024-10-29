@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Update">
-      <change beforePath="$PROJECT_DIR$/src/rpg/items/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/Equipment.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/enums/ArmorType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/enums/WeaponType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/interfaces/Equipable.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_08_10_2024_02_49_p__m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/GameCharacter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/enums/EnemyType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/enums/EnemyType.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/items/HealthPotion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/miscs/HealthPotion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/Item.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/items/ShortSword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/weapons/ShortSword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/items/armors/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/armors/Armor.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,8 +30,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>

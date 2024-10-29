@@ -31,7 +31,9 @@ public class Skeleton extends Enemy {
                 break;
         }
     }
-
+    protected void SkeletonType(){
+        this.type = EnemyType.MEDIUM;
+    }
     protected void boneStrike(GameCharacter enemy) {
         int damage = 4;
         enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);

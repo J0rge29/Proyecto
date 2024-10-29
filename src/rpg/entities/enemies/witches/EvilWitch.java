@@ -14,7 +14,6 @@ public class EvilWitch extends Enemy {
 
     public EvilWitch() {
         super("Evil Witch");
-        this.enemyType.put(EnemyType.SECRET);
 
         this.stats.put(Stats.MAX_HP, 40);
         this.stats.put(Stats.HP, 40);
@@ -26,14 +25,16 @@ public class EvilWitch extends Enemy {
      * metodo para hacer el ataque "lanza un poderoso hechizo"
      * @param enemy El personaje enemigo recibirá el ataque
      */
-    protected void castPowerfulSpell(GameCharacter enemy) {
 
+    protected void castPowerfulSpell(GameCharacter enemy) {
         int damage = (int) (this.stats.get(Stats.ATTACK) * 0.8);
         enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);
         System.out.println(this.name + " lanza un poderoso hechizo " + enemy.getName() + " provocando " + damage + " de daño!");
         System.out.println(enemy.getName() + " tiene " + enemy.getStats().get(Stats.HP) + " HP restante.");
     }
-
+    protected void witchType(){
+        this.type = EnemyType.SECRET;
+    }
     /**
      * Metodo para hacer el ataque "lanza un hechizo debil"
      * @param enemy El personaje enemigo recibirá el ataque
