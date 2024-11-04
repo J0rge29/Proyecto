@@ -18,6 +18,8 @@ public class Toppanel extends Backgoundpanel{
         setDimension(WindowConstants.TOP_DIMENSION);
         setBorder(WindowConstants.EMPTY_BORDER);
     }
-
+    private void createUIComponents() {
+        topPanel = new TopPanel();
+    }
 
 }

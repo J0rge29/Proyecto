@@ -5,21 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/Interface.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Backgoundpanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/Cache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/FontLoader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/Fontcache.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/ImageLoader.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButtons.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/interfaces/Equipable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730605734216</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1730752071045</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1730752071045</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
