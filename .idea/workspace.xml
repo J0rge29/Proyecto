@@ -5,10 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2024_02_33_p__m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_24_10_2024_02_33_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/Interface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Backgoundpanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/Cache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/FontLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/Fontcache.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/utils/cache/ImageLoader.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/interfaces/Equipable.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,8 +29,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -32,12 +43,12 @@
     &quot;assignee&quot;: &quot;J0rge29&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/J0rge29/Proyecto.git&quot;,
-    &quot;accountId&quot;: &quot;03657545-5edc-4e85-9ae4-43dc9cb7bd30&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/J0rge29/Proyecto.git",
+    "accountId": "4fc3cf8f-952f-4126-b9b6-d101b5775fa1"
   }
-}</component>
+}]]></component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -55,6 +66,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.GUIForm.executor": "Run",
+    "Application.Mainwindow.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
@@ -71,7 +83,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Mainwindow">
     <configuration name="GUIForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rpg.gui.GUIForm" />
       <module name="Proyecto" />
@@ -85,8 +97,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Mainwindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rpg.gui.Mainwindow" />
+      <module name="Proyecto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rpg.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Mainwindow" />
         <item itemvalue="Application.GUIForm" />
       </list>
     </recent_temporary>
@@ -124,7 +150,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730232753117</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1730605734216</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1730605734216</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -156,6 +190,15 @@
           <url>file://$PROJECT_DIR$/untitled/src/Main.java</url>
           <line>11</line>
           <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/rpg/gui/Mainwindow.java</url>
+          <line>64</line>
+          <properties class="rpg.gui.Mainwindow" method="main">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

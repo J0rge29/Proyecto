@@ -4,7 +4,7 @@ public class GUIForm {
 
     public MainWindow() {
         setTitle("RPG Game");
-        setSize(800, 600);
+        setSize( WINDOW_SIZE );
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setContentPane(mainPanel);
         setVisible(true);
@@ -13,6 +13,12 @@ public class GUIForm {
     public static void main(String[] args) {
         new MainWindow();
     }
-}
+
+
+
+
+
 
 }
+
+
