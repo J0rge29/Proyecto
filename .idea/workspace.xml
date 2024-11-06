@@ -5,28 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/rpg/enums/BarType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/UIConstants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/HoverButtonUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabelUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/NameLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/LabelUI.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/NameLabelUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/EnemySpriteLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PlayerSpriteLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/GameLabelUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Interface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/UserButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/UserButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/Backgoundpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Backgroundpanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/utils/cache/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/utils/cache/ImageCache.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -181,7 +164,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730753448741</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1730872339294</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1730872339294</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
