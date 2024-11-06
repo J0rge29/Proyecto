@@ -70,7 +70,24 @@ public class Mainwindow extends JFrame {
     };
 }
 
+    private void createUIComponents() {
+        topPanel = new TopPanel();
+        middlePanel = new MiddlePanel();
+        bottomPanel = new BottomPanel();
+        button1 = new BaseButton("Button 1");
+        b2 = new BaseButton("Tiendas");
+        b3 = new BaseButton("Inventario");
+        atacarButton = new AttackButton();
+        habilidadesButton = new SkillPanelButton();
+        huirButton = new FleeButton();
+        exampleLabel = new PortraitLabel();
+    }
+    private void createUIComponents() {
 
-
+        // Otros componentes de la interfaz
+        lifeLabel = new BarLabel(100, 100, BarType.LIFE);
+        magicLabel = new BarLabel(30, 100, BarType.MAGIC);
+        expLabel = new BarLabel(0, 350, BarType.EXPERIENCE);
+    }
 
 }

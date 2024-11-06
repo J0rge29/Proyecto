@@ -5,10 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButtons.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/enums/BarType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/UIConstants.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/HoverButtonUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabelUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/NameLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/LabelUI.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/NameLabelUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Interface.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButtons.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/UserButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/UserButton.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/Backgoundpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Backgroundpanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/utils/cache/Cache.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/utils/cache/ImageCache.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,12 +50,12 @@
     &quot;assignee&quot;: &quot;J0rge29&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/J0rge29/Proyecto.git",
-    "accountId": "4fc3cf8f-952f-4126-b9b6-d101b5775fa1"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/J0rge29/Proyecto.git&quot;,
+    &quot;accountId&quot;: &quot;4fc3cf8f-952f-4126-b9b6-d101b5775fa1&quot;
   }
-}]]></component>
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="CurrentFile" />
   </component>
@@ -52,26 +70,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GUIForm.executor": "Run",
-    "Application.Mainwindow.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HP/IdeaProjects/Proyecto",
-    "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/Proyecto/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GUIForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Mainwindow.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JavaFX",
-      "CSS"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JavaFX&quot;,
+      &quot;CSS&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Mainwindow">
     <configuration name="GUIForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rpg.gui.GUIForm" />
@@ -155,7 +173,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730752071045</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1730753448741</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1730753448741</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

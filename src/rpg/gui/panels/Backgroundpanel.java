@@ -2,14 +2,12 @@ package rpg.gui.panels;
 
 import javax.swing.*;
 
-import rpg.utils.cache.ImageCache;
-
 import java.awt.*;
 
 
 
 
-public abstract class Backgoundpanel extends JPanel {
+public abstract class Backgroundpanel extends JPanel {
 
 
     protected ImageIcon backgroundImage;

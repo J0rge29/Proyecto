@@ -3,7 +3,7 @@ package rpg.gui.buttons;
 import rpg.gui.ui.UserHoverUI;
 
 
-public abstract class UserButton extends BaseButtons{
+public abstract class UserButton extends  BaseButton {
 
     public UserButton(String text) {
         super(text);
@@ -17,6 +17,7 @@ public abstract class UserButton extends BaseButtons{
     protected void initIcons() {
         // No se inicializan iconos.
     }
+
 
 
 

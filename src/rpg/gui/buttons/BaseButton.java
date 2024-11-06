@@ -1,13 +1,11 @@
 package rpg.gui.buttons;
 
-
 import rpg.gui.ui.HoverButtonUI;
-import rpg.utils.cache.ImageCache;
-
 
 import javax.swing.*;
 
-public abstract class BaseButtons extends JButton {
+
+public abstract class BaseButton extends JButton {
 
     public BaseButton(String text) {
 
@@ -18,7 +16,12 @@ public abstract class BaseButtons extends JButton {
 
     protected abstract void initIcons();
 
-
+    private void createUIComponents() {
+        topPanel = new TopPanel();
+        middlePanel = new MiddlePanel();
+        bottomPanel = new BottomPanel();
+        button1 = new AttackButton();
+    }
 
 
 }

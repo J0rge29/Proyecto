@@ -3,8 +3,6 @@ package rpg.gui;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 
-
-
 public interface WindowConstants {
 
 

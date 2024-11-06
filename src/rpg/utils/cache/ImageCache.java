@@ -6,7 +6,7 @@ import java.awt.image.BufferedImage;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Cache {
+public class ImageCache {
 
     private static final String IMAGE_PATH = "image/";
     private static final Map<String, BufferedImage> CACHE = new HashMap<>();

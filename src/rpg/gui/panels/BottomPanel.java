@@ -6,7 +6,7 @@ import rpg.utils.cache.ImageCache;
 import javax.swing.*;
 
 
-public class BottomPanel extends Backgoundpanel{
+public class BottomPanel extends Backgroundpanel {
 
     @Override
     protected void init() {

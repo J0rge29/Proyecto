@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 
-public class MiddlePanel extends Backgoundpanel {
+public class MiddlePanel extends Backgroundpanel {
     @Override
     protected void init() {
         // Buscamos la imagen por ahora directamente en los directorios

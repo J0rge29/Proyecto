@@ -1,10 +1,12 @@
-package rpg.gui.ui;
+package rpg.gui.buttons;
+
 
 import javax.swing.plaf.basic.BasicButtonUI;
-import rpg.gui.WindowConstants;
+import rpg.gui.UIConstants;
 import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
+import javax.swing.plaf.basic.BasicButtonUI;
 import java.awt.*;
 
 
@@ -20,7 +22,7 @@ public class HoverButtonUI extends BasicButtonUI {
     protected void installDefaults(AbstractButton b) {
 
         initParts();
-        b.setFont(WindowConstants.FONT.deriveFont(Font.PLAIN, 24));
+        b.setFont(UIConstants.FONT.deriveFont(Font.PLAIN, 24));
         b.setForeground(Color.BLACK);
         b.setDoubleBuffered(true);
         b.setOpaque(false);
@@ -96,4 +98,6 @@ public class HoverButtonUI extends BasicButtonUI {
         g2d.translate(width, 0);
         g2d.drawImage(parts[2].getImage(), 0, 0, null);
     }
+}
+
 }

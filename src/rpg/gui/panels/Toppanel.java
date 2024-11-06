@@ -7,7 +7,7 @@ import javax.swing.*;
 
 
 
-public class Toppanel extends Backgoundpanel{
+public class Toppanel extends Backgroundpanel {
 
 
     @Override
