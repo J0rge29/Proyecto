@@ -5,11 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/EnemySpriteLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PlayerSpriteLabel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/GameLabelUI.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +168,15 @@
       <option name="project" value="LOCAL" />
       <updated>1730872339294</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1730873765148</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1730873765148</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
