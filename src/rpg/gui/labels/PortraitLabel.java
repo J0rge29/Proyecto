@@ -1,11 +1,8 @@
 package rpg.gui.labels;
 
 import javax.swing.*;
-
 import rpg.gui.ui.LabelUI;
 import rpg.utils.cache.ImageCache;
-
-import javax.swing.*;
 import java.awt.*;
 
 public class PortraitLabel extends JLabel {

@@ -1,10 +1,8 @@
 package rpg.gui.labels;
 
 import javax.swing.*;
-
 import rpg.entities.enemies.Enemy;
 import rpg.gui.ui.EnemyLabelUI;
-import javax.swing.*;
 import java.awt.*;
 
 
