@@ -15,7 +15,7 @@ public abstract class Backgroundpanel extends JPanel {
     protected Dimension dimension;
 
 
-    public BackgroundPanel() {
+    public Backgroundpanel() {
         init();
     }
 
@@ -47,8 +47,4 @@ public abstract class Backgroundpanel extends JPanel {
         g2d.drawImage(backgroundImage.getImage(), 0, 0,
                 dimension.width, dimension.height, null);
     }
-
-
-
-
 }

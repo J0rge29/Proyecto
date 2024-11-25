@@ -14,5 +14,9 @@ public enum Stats {
     ACCURACY,
     EVASION,
     CRITICAL_HIT,
-    CRITICAL_DAMAGE;
+    CRITICAL_DAMAGE,
+    EXPERIENCE,
+    NEEDED_EXPERIENCE,
+    LEVEL,
+    GOLD
 }
