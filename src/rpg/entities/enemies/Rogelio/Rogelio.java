@@ -1,13 +1,14 @@
 package rpg.entities.enemies.Rogelio;
-
+import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
+import rpg.enums.EnemyType;
 
 
     /**
      * Clase base para el enemigo Rogelio.
      */
-    public class Rogelio extends Enemy {
+    public abstract class Rogelio extends Enemy {
 
         /**
          * Constructor de la clase Rogelio.
@@ -43,7 +44,9 @@ import rpg.enums.Stats;
             System.out.println(this.name + " lanza una bola de basura a " + enemy.getName() + " causando " + damage + " de daño.");
             System.out.println(enemy.getName() + " tiene " + enemy.getStats().get(Stats.HP) + " de vida restante.");
         }
-
+        protected void RogelioType() {
+            this.type = EnemyType.BOSS;
+        }
         /**
          * Método que define el ataque del enemigo Kevin. Alterna entre 'Lanzamiento de Piedra' y 'Bola de Fuego'.
          *
@@ -72,4 +75,4 @@ import rpg.enums.Stats;
 
 
 
-}
+

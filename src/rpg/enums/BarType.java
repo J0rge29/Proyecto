@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.awt.image.BufferedImage;
 
 
-public enum BarType BarType {
+public enum BarType{
 
     LIFE, MAGIC, EXPERIENCE;
 

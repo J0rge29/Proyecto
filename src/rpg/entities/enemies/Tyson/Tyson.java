@@ -1,20 +1,22 @@
 
 package rpg.entities.enemies.Tyson;
 
-
+import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
+import rpg.enums.EnemyType;
+
 
 /**
  * Clase base para el enemigo. El enemigo se llama Tyson.
  */
-public class Tyson extends Enemy {
+public abstract class Tyson extends Enemy {
 
     /**
      * Constructor de la clase Tyson.
      */
 
-    public Tyson() {
+    public Tyson () {
         super("Tyson");
         this.stats.put(Stats.MAX_HP, 150); // Vida máxima de Tyson
         this.stats.put(Stats.HP, 150); // Vida actual de Tyson
@@ -25,10 +27,10 @@ public class Tyson extends Enemy {
     /**
      * Método que realiza el ataque 'golpe' de Tyson.
      */
-    protected void golpe(GameCharacter enemy) {
-        int damage = this.stats.get(Stats.ATTACK);
-        enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);// Aplica el daño al enemigo
-        System.out.println(this.name + " realiza un golpe callejero a " + enemy.getName() + " y causa " + damage + " de daño.");
+    protected void golpeCallejero(GameCharacter enemy) {
+        int damage = 2;
+        enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage); // Aplica el daño al enemigo
+        System.out.println(this.name + " realiza un golpe callejero a " + enemy.getName() + " causando " + damage + " de daño.");
         System.out.println(enemy.getName() + " tiene " + enemy.getStats().get(Stats.HP) + " de vida restante.");
     }
 
@@ -55,34 +57,4 @@ public class Tyson extends Enemy {
         }
     }
 
-    public static class GameCharacter {
-
-
-        private Player player;
-        private Enemy enemy;
-
-        public Game() {
-            this.player = new Player("Hero");
-            this.enemy = new Enemy("Goblin");
-        }
-
-        public void startGame() {
-            while (player.isAlive() && enemy.isAlive()) {
-                player.attack(enemy);
-                if (enemy.isAlive()) {
-                    enemy.attack(player);
-                }
-            }
-
-            if (player.isAlive()) {
-                System.out.println("You defeated the enemy!");
-            } else {
-                System.out.println("Game over. You were defeated by the enemy.");
-            }
-        }
-
-
-
-
-    }
 }

@@ -6,7 +6,7 @@ import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
 import rpg.enums.EnemyType;
 
-public class EvilWitch extends Enemy {
+public abstract class EvilWitch extends Enemy {
 
     /**
      * Constructor de la clase EvilWitch

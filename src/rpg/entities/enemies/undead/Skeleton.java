@@ -5,7 +5,7 @@ import rpg.enums.Stats;
 import rpg.utils.Randomize;
 import rpg.enums.EnemyType;
 
-public class Skeleton extends Enemy {
+public abstract class Skeleton extends Enemy {
 
     public Skeleton() {
         super("Skeleton");
@@ -24,10 +24,9 @@ public class Skeleton extends Enemy {
                 boneStrike(enemy);
                 break;
             case 2:
-                hauntingScream(enemy);
-                break;
+                boneStrike(enemy);
             default:
-                super.attack(enemy);
+                hauntingScream(enemy);
                 break;
         }
     }

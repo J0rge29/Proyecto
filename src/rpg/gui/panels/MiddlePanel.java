@@ -7,8 +7,9 @@ import javax.swing.*;
 
 
 
-public class MiddlePanel extends Backgroundpanel {
+public class MiddlePanel extends Backgroundpanel{
     @Override
+
     protected void init() {
         // Buscamos la imagen por ahora directamente en los directorios
         backgroundImage = new ImageIcon(ImageCache.addImage("midPanel",

@@ -8,4 +8,4 @@ public class AttackButton extends UserButton  {
         super("Atacar");
     }
 }
-}
+
