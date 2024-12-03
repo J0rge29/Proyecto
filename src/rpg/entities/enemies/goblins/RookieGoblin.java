@@ -10,6 +10,12 @@ import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
 
+
+
+
+
+
+
 public abstract class RookieGoblin extends Enemy{
 
     public RookieGoblin() {

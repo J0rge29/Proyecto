@@ -1,8 +1,8 @@
 package rpg.gui;
 
-public class GUIForm {
+public class GUIForm extends Mainpanel {
 
-    public MainWindow() {
+    public  Mainpanel() {
         setTitle("RPG Game");
         setSize( WINDOW_SIZE );
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);

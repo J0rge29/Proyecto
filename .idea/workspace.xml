@@ -5,29 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/rpg/interfaces/Equipable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/interfaces/Sellable.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/inventory/Inventory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/inventory/InventoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/items/armors/GoldenArmor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/items/weapons/Weapon.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/GameCharacter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/Player.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/enums/BarType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/enums/BarType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/HoverButtonUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/HoverButtonUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/items/Equipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/Equipment.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/items/armors/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/armors/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/items/miscs/Misc.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/miscs/Misc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,12 +59,17 @@
   "keyToString": {
     "Application.GUIForm.executor": "Run",
     "Application.Mainwindow.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "20",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/HP/IdeaProjects/Proyecto",
     "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/Proyecto/src/Main.java",
-    "project.structure.last.edited": "Project",
+    "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   },
@@ -91,7 +80,7 @@
     ]
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Mainwindow">
+  <component name="RunManager" selected="Application.GUIForm">
     <configuration name="GUIForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rpg.gui.GUIForm" />
       <module name="Proyecto" />
@@ -120,8 +109,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Mainwindow" />
         <item itemvalue="Application.GUIForm" />
+        <item itemvalue="Application.Mainwindow" />
       </list>
     </recent_temporary>
   </component>
