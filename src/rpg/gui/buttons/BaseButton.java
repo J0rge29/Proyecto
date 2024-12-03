@@ -15,13 +15,4 @@ public abstract class BaseButton extends JButton {
     }
 
     protected abstract void initIcons();
-
-    private void createUIComponents() {
-        topPanel = new TopPanel();
-        middlePanel = new MiddlePanel();
-        bottomPanel = new BottomPanel();
-        button1 = new AttackButton();
-    }
-
-
 }

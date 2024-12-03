@@ -1,7 +1,5 @@
 package rpg.items.miscs;
 
-package rpg.items.miscs;
-
 import rpg.items.Item;
 
 import java.io.Serializable;

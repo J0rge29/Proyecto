@@ -1,8 +1,10 @@
 package rpg.entities.enemies;
+
 import rpg.entities.Player;
 import rpg.entities.GameCharacter;
 import rpg.enums.EnemyType;
 import rpg.enums.Stats;
+
 import javax.swing.*;
 import java.util.HashMap;
 
@@ -33,15 +35,7 @@ public abstract class Enemy extends GameCharacter {
         this.stats.put(Stats.CRITICAL_DAMAGE, 10);
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public HashMap<Stats, Integer> getStats() {
-        return stats;
-    }
-
-    public String getEnemyType(){
+    public String getEnemyType() {
         return type.name();
     }
 
@@ -49,7 +43,7 @@ public abstract class Enemy extends GameCharacter {
         return stats.get(Stats.HP) > 0;
     }
 
-    public void attack(Player player) {
+    public String attack(Player player) {
         int baseDamage = stats.get(Stats.ATTACK);
         int defense = player.getStats().get(Stats.DEFENSE);
         int accuracy = stats.get(Stats.ACCURACY);
@@ -83,6 +77,7 @@ public abstract class Enemy extends GameCharacter {
         } else {
             JOptionPane.showMessageDialog(null, player.getName() + " esquivó el ataque de " + this.getName());
         }
+        return "";
     }
 
     private int calculateDamage(int baseDamage, int defense, int accuracy, int evasion, int criticalHitChance, int criticalDamage) {
@@ -97,7 +92,7 @@ public abstract class Enemy extends GameCharacter {
 
     public abstract void getLoot();
 
-    public abstract void attack(GameCharacter enemy);
+    public abstract String attack(GameCharacter enemy);
 
     public EnemyType getType() {
         return type;
@@ -107,33 +102,5 @@ public abstract class Enemy extends GameCharacter {
         this.name = name;
 
 
-
     }
-
-
-
-    public abstract class Enemy extends GameCharacter {
-
-        protected EnemyType type;
-
-        public Enemy(String name) {
-            super(name);
-        }
-
-        public abstract void getLoot();
-
-        public abstract String attack(GameCharacter enemy);
-
-        public EnemyType getType() {
-            return type;
-        }
-
-        public void setName(String name) {
-            this.name = name;
-        }
-
-        public abstract ImageIcon getSprite();
-    }
-
-
 }

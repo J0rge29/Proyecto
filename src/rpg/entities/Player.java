@@ -18,7 +18,7 @@ public class Player extends GameCharacter implements Serializable {
     public Player(String name) {
 
         super(name);
-        inventory = new Inventory();
+        inventory = new Inventory(15);
     }
 
     public boolean tryToFlee() {
@@ -98,55 +98,6 @@ public class Player extends GameCharacter implements Serializable {
         } else {
             inventory.removeItem(item);
         }
-    }
-
-    public void sellItem(Item item) {
-
-        try {
-            Item getItem = inventory.getItem(item);
-            if (getItem instanceof Misc misc) {
-                if (misc.isStackable()) {
-                    if (misc.getQuantity() > 1) {
-                        misc.decreaseQuantity(1);
-                    } else {
-                        inventory.removeItem(item);
-                    }
-                }
-            } else {
-                inventory.removeItem(getItem);
-            }
-        } catch (ItemNotFoundException e) {
-            JOptionPane.showMessageDialog(null, e.getMessage());
-        }
-    }
-
-    public void showInventory() {
-
-        StringBuilder content = new StringBuilder("Inventory: \n");
-        String format = """
-                Name: %s, Price: %d
-                Description: %s
-                """;
-        String formatQuantity = """
-                Name: %s, Price: %d, Quantity: %d
-                Description: %s
-                """;
-        for (Item item : inventory.getItems()) {
-
-            if (item instanceof Misc misc) {
-                if (misc.isStackable()) {
-                    content.append(String.format(formatQuantity, item.getName(),
-                            item.getPrice(), misc.getQuantity(), item.getDescription()));
-                } else {
-                    content.append(String.format(format, item.getName(), item.getPrice(),
-                            item.getDescription()));
-                }
-            } else {
-                content.append(String.format(format, item.getName(), item.getPrice(),
-                        item.getDescription()));
-            }
-        }
-        JOptionPane.showMessageDialog(null, content.toString());
     }
 
     public Inventory getInventory() {

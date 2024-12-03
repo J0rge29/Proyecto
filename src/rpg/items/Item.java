@@ -15,4 +15,8 @@ public abstract class Item {
     }
 
     protected abstract void initItem();
+
+    public String getName() {
+        return name;
+    }
 }

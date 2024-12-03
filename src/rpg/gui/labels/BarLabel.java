@@ -1,11 +1,8 @@
 package rpg.gui.labels;
 
 import javax.swing.*;
+
 import rpg.enums.BarType;
-import rpg.gui.ui.BarLabelUI;
-
-
-
 
 public class BarLabel extends JLabel {
 
