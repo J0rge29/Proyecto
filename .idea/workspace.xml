@@ -4,18 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/events/AttackEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/ui/UserHoverUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Enemy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/GUIForm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/MainWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainpanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/Mainwindow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/BaseButton.java" afterDir="false" />
-    </list>
+    <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -230,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733254033694</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1733255572997</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733255572997</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
