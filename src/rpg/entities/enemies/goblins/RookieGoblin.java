@@ -10,13 +10,7 @@ import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
 
-
-
-
-
-
-
-public abstract class RookieGoblin extends Enemy{
+public class RookieGoblin extends Enemy {
 
     public RookieGoblin() {
 
@@ -41,7 +35,7 @@ public abstract class RookieGoblin extends Enemy{
     }
 
     @Override
-    public void attack(GameCharacter enemy) {
+    public String attack(GameCharacter enemy) {
         String message;
         // Se elige un número aleatorio entre 1 y 100
         int random = Randomize.getRandomInt(1, 100);
@@ -74,10 +68,10 @@ public abstract class RookieGoblin extends Enemy{
                 }
                 break;
             default:
-                message: ((GameCharacter) this).attack(enemy);
+                message = ((GameCharacter) this).attack(enemy);
                 break;
         }
-        
+        return message;
     }
 
     protected String throwRock(GameCharacter enemy) throws EnemyDeathException {
@@ -102,14 +96,9 @@ public abstract class RookieGoblin extends Enemy{
         return message;
     }
 
-    protected abstract int reduceHP(GameCharacter enemy, int damage);
-
     @Override
     public ImageIcon getSprite() {
 
         return ImageCache.getImageIcon("rookie_goblin");
     }
-
-
-
 }
