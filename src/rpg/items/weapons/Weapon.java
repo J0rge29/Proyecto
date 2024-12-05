@@ -10,7 +10,7 @@ public abstract class Weapon extends Equipment {
     protected WeaponType weaponType;
 
     public Weapon(String name, String description, int price, WeaponType weaponType) {
-        super(name, description, price, ItemType.WEAPON);
+        //super(name, description, price, ItemType.WEAPON);
         this.weaponType = weaponType;
     }
 

@@ -25,4 +25,6 @@ public interface WindowConstants {
     EmptyBorder EMPTY_BORDER = new EmptyBorder(SIMPLE_MARGIN, SIMPLE_MARGIN,
             SIMPLE_MARGIN, SIMPLE_MARGIN);
 
+    Font FONT = new Font(new Font("Arial", Font.PLAIN, 14).getAttributes());
+
 }

@@ -6,11 +6,16 @@
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/ui/LabelUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/ui/LabelUI.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -21,6 +26,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Enum" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -54,29 +60,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.GUIForm.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Mainwindow.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GUIForm.executor": "Run",
+    "Application.MainWindow.executor": "Run",
+    "Application.Mainwindow.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "252",
+    "git-widget-placeholder": "master",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/HP/IdeaProjects/Proyecto",
+    "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/Proyecto/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
-      &quot;JavaFX&quot;,
-      &quot;CSS&quot;
+  "keyToStringList": {
+    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
+      "JavaFX",
+      "CSS"
     ]
   }
-}</component>
-  <component name="RunManager" selected="Application.Mainwindow">
+}]]></component>
+  <component name="RunManager" selected="Application.MainWindow">
     <configuration name="GUIForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rpg.gui.GUIForm" />
+      <module name="Proyecto" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="rpg.gui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="MainWindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="rpg.gui.MainWindow" />
       <module name="Proyecto" />
       <extension name="coverage">
         <pattern>
@@ -103,8 +128,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Mainwindow" />
+        <item itemvalue="Application.MainWindow" />
         <item itemvalue="Application.GUIForm" />
+        <item itemvalue="Application.Mainwindow" />
       </list>
     </recent_temporary>
   </component>
@@ -197,7 +223,47 @@
       <option name="project" value="LOCAL" />
       <updated>1731010843812</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1733254033694</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1733254033694</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1733255572997</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1733255572997</updated>
+    </task>
+    <task id="LOCAL-00013" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1733256449230</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1733256449230</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1733256476292</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1733256476292</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1733256500541</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1733256500541</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -229,15 +295,6 @@
           <url>file://$PROJECT_DIR$/untitled/src/Main.java</url>
           <line>11</line>
           <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/src/rpg/gui/MainWindow.java</url>
-          <line>64</line>
-          <properties class="rpg.gui.Mainwindow">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="4" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

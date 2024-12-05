@@ -33,5 +33,4 @@ public class PortraitLabel extends JLabel {
                 getPreferredSize().width,
                 getPreferredSize().height, this);
     }
-
 }
