@@ -1,0 +1,628 @@
+Index: src/rpg/items/Item.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.items;\r\n\r\nimport rpg.enums.ItemType;\r\n\r\npublic abstract class Item {\r\n\r\n    protected String name;\r\n    protected String description;\r\n    protected int price;\r\n    protected ItemType type;\r\n\r\n    public Item() {\r\n\r\n        initItem();\r\n    }\r\n\r\n    protected abstract void initItem();\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/items/Item.java b/src/rpg/items/Item.java
+--- a/src/rpg/items/Item.java	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/src/rpg/items/Item.java	(date 1732651621047)
+@@ -3,16 +3,31 @@
+ import rpg.enums.ItemType;
+ 
+ public abstract class Item {
+-
+     protected String name;
+     protected String description;
+     protected int price;
+-    protected ItemType type;
++    protected ItemType itemType;
++
++    public Item(String name, String description, int price, ItemType itemType) {
++        this.name = name;
++        this.description = description;
++        this.price = price;
++        this.itemType = itemType;
++    }
++
++    public String getName() {
++        return name;
++    }
+ 
+-    public Item() {
++    public String getDescription() {
++        return description;
++    }
+ 
+-        initItem();
++    public int getPrice() {
++        return price;
+     }
+ 
+-    protected abstract void initItem();
++    public ItemType getItemType() {
++        return itemType;
++    }
+ }
+\ No newline at end of file
+Index: src/rpg/entities/Player.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.entities;\r\n\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.enums.Stats;\r\n\r\nimport javax.swing.*;\r\nimport java.util.HashMap;\r\n\r\npublic class Player extends GameCharacter {\r\n\r\n    public Player(String name) {\r\n        super(name);\r\n        this.stats.put(Stats.MAX_HP, 100);\r\n        this.stats.put(Stats.HP, 100);\r\n        this.stats.put(Stats.MAX_MP, 50);\r\n        this.stats.put(Stats.MP, 50);\r\n        this.stats.put(Stats.ATTACK, 10);\r\n        this.stats.put(Stats.DEFENSE, 5);\r\n        this.stats.put(Stats.SPEED, 5);\r\n        this.stats.put(Stats.DEXTERITY, 5);\r\n        this.stats.put(Stats.LUCK, 5);\r\n        this.stats.put(Stats.ACCURACY, 50);\r\n        this.stats.put(Stats.EVASION, 5);\r\n        this.stats.put(Stats.CRITICAL_HIT, 5);\r\n        this.stats.put(Stats.CRITICAL_DAMAGE, 10);\r\n    }\r\n\r\n    private int calculateDamage(int baseDamage, int defense, int accuracy, int evasion, int criticalHitChance, int criticalDamage) {\r\n        int damage = Math.max(0, baseDamage - defense);\r\n        return damage;\r\n    }\r\n\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/Player.java b/src/rpg/entities/Player.java
+--- a/src/rpg/entities/Player.java	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/src/rpg/entities/Player.java	(date 1732655759234)
+@@ -2,11 +2,12 @@
+ 
+ import rpg.entities.enemies.Enemy;
+ import rpg.enums.Stats;
+-
+ import javax.swing.*;
+ import java.util.HashMap;
+ 
++
+ public class Player extends GameCharacter {
++    private static Player instance;
+ 
+     public Player(String name) {
+         super(name);
+@@ -24,6 +25,20 @@
+         this.stats.put(Stats.CRITICAL_HIT, 5);
+         this.stats.put(Stats.CRITICAL_DAMAGE, 10);
+     }
++    public static Player getInstance(String name) {
++        if (instance == null) {
++            instance = new Player(name);
++        }
++        return instance;
++    }
++    public static synchronized Player getInstance() {
++        return instance;
++    }
++
++    public static void setInstance(Player player) {
++        instance = player;
++    }
++
+ 
+     private int calculateDamage(int baseDamage, int defense, int accuracy, int evasion, int criticalHitChance, int criticalDamage) {
+         int damage = Math.max(0, baseDamage - defense);
+Index: src/rpg/gui/panels/MiddlePanel.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.gui.panels;\r\n\r\nimport rpg.gui.WindowConstants;\r\nimport rpg.utils.cache.ImageCache;\r\n\r\nimport javax.swing.*;\r\n\r\n\r\n\r\npublic class MiddlePanel extends Backgroundpanel {\r\n    @Override\r\n    protected void init() {\r\n        // Buscamos la imagen por ahora directamente en los directorios\r\n        backgroundImage = new ImageIcon(ImageCache.addImage(\"midPanel\",\r\n                \"panels/mainBackground.png\"));\r\n        setDimension(WindowConstants.MIDDLE_DIMENSION);\r\n        setBorder(WindowConstants.EMPTY_BORDER);\r\n    }\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/gui/panels/MiddlePanel.java b/src/rpg/gui/panels/MiddlePanel.java
+--- a/src/rpg/gui/panels/MiddlePanel.java	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/src/rpg/gui/panels/MiddlePanel.java	(date 1732656317897)
+@@ -7,8 +7,9 @@
+ 
+ 
+ 
+-public class MiddlePanel extends Backgroundpanel {
++public class MiddlePanel extends Backgroundpanel{
+     @Override
++
+     protected void init() {
+         // Buscamos la imagen por ahora directamente en los directorios
+         backgroundImage = new ImageIcon(ImageCache.addImage("midPanel",
+Index: src/rpg/items/armors/Armor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.items.armors;\r\n\r\nimport rpg.enums.ArmorType;\r\nimport rpg.enums.ItemType;\r\nimport rpg.items.Equipment;\r\n\r\nimport java.util.HashMap;\r\n\r\npublic abstract class Armor extends Equipment {\r\n    protected ArmorType armorType;\r\n    protected ItemType type;\r\n    protected int durability;\r\n    protected HashMap<String, Integer> elementalResistance;\r\n\r\n    public Armor(String name, String description, int price, ArmorType armorType, int durability){\r\n        this.name = \"leather armor\";\r\n        this.description = \"ideal para ataques cuerpo a cuerpo\";\r\n        this.price = 50;\r\n        this.armorType= ArmorType.HELMET;\r\n        this.durability = durability;\r\n        this.elementalResistance = new HashMap<>();\r\n    }\r\n\r\n    public ArmorType getArmorType() {\r\n        return armorType;\r\n    }\r\n\r\n    public int getDurability() {\r\n        return durability;\r\n    }\r\n\r\n    public void setDurability(int durability) {\r\n        this.durability = durability;\r\n    }\r\n\r\n    public void addElementalResistance(String element, int resistanceValue) {\r\n        elementalResistance.put(element, resistanceValue);\r\n    }\r\n\r\n    public int getElementalResistance(String element) {\r\n        return elementalResistance.getOrDefault(element, 0);\r\n    }\r\n\r\n    public void reduceDurability(int amount) {\r\n        this.durability -= amount;\r\n        if (this.durability < 0) {\r\n            this.durability = 0;\r\n        }\r\n    }\r\n\r\n    public boolean isBroken() {\r\n        return this.durability == 0;\r\n    }\r\n}\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/items/armors/Armor.java b/src/rpg/items/armors/Armor.java
+--- a/src/rpg/items/armors/Armor.java	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/src/rpg/items/armors/Armor.java	(date 1732651463919)
+@@ -1,55 +1,19 @@
+ package rpg.items.armors;
+-
++import rpg.items.Item;
+ import rpg.enums.ArmorType;
+ import rpg.enums.ItemType;
+ import rpg.items.Equipment;
+-
+ import java.util.HashMap;
+ 
+ public abstract class Armor extends Equipment {
+     protected ArmorType armorType;
+-    protected ItemType type;
+-    protected int durability;
+-    protected HashMap<String, Integer> elementalResistance;
+ 
+-    public Armor(String name, String description, int price, ArmorType armorType, int durability){
+-        this.name = "leather armor";
+-        this.description = "ideal para ataques cuerpo a cuerpo";
+-        this.price = 50;
+-        this.armorType= ArmorType.HELMET;
+-        this.durability = durability;
+-        this.elementalResistance = new HashMap<>();
++    public Armor(String name, String description, int price, ArmorType armorType) {
++        super(name, description, price, ItemType.ARMOR);
++        this.armorType = armorType;
+     }
+ 
+     public ArmorType getArmorType() {
+         return armorType;
+     }
+-
+-    public int getDurability() {
+-        return durability;
+-    }
+-
+-    public void setDurability(int durability) {
+-        this.durability = durability;
+-    }
+-
+-    public void addElementalResistance(String element, int resistanceValue) {
+-        elementalResistance.put(element, resistanceValue);
+-    }
+-
+-    public int getElementalResistance(String element) {
+-        return elementalResistance.getOrDefault(element, 0);
+-    }
+-
+-    public void reduceDurability(int amount) {
+-        this.durability -= amount;
+-        if (this.durability < 0) {
+-            this.durability = 0;
+-        }
+-    }
+-
+-    public boolean isBroken() {
+-        return this.durability == 0;
+-    }
+ }
+-
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f1988fd4-e346-4053-9acf-fd3b1999a9eb\" name=\"Changes\" comment=\"Merge remote-tracking branch 'origin/master'\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;J0rge29&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/J0rge29/Proyecto.git&quot;,\r\n    &quot;accountId&quot;: &quot;4fc3cf8f-952f-4126-b9b6-d101b5775fa1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2mV6iUKpD9c62sALCgUF8iE87Ar\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <OptionsSetting value=\"false\" id=\"Update\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.GUIForm.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.Mainwindow.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto/src/Main.java&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [\r\n      &quot;JavaFX&quot;,\r\n      &quot;CSS&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Mainwindow\">\r\n    <configuration name=\"GUIForm\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"rpg.gui.GUIForm\" />\r\n      <module name=\"Proyecto\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"rpg.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Mainwindow\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"rpg.gui.Mainwindow\" />\r\n      <module name=\"Proyecto\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"rpg.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Mainwindow\" />\r\n        <item itemvalue=\"Application.GUIForm\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f1988fd4-e346-4053-9acf-fd3b1999a9eb\" name=\"Changes\" comment=\"\" />\r\n      <created>1727149523095</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1727149523095</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Update\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1728067276655</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1728067276655</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Update\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1728613527995</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1728613527995</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730232753117</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730232753117</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730605734216</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730605734216</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730752071045</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730752071045</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730753448741</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730753448741</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730872339294</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730872339294</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730873765148</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730873765148</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1731007355795</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1731007355795</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1731010843812</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1731010843812</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Update\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Merge remote-tracking branch 'origin/master'\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/untitled/src/Main.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/untitled/src/Main.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/rpg/gui/Mainwindow.java</url>\r\n          <line>64</line>\r\n          <properties class=\"rpg.gui.Mainwindow\" method=\"main\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"4\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/.idea/workspace.xml	(date 1732656165917)
+@@ -4,8 +4,20 @@
+     <option name="autoReloadType" value="SELECTIVE" />
+   </component>
+   <component name="ChangeListManager">
+-    <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
++    <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Update">
++      <change afterPath="$PROJECT_DIR$/src/rpg/inventory/Inventory.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/rpg/inventory/InventoryTest.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/rpg/items/armors/GoldenArmor.java" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/rpg/items/weapons/Weapon.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/entities/GameCharacter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/GameCharacter.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/entities/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/Player.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/items/Item.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/Item.java" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/items/armors/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/items/armors/Armor.java" afterDir="false" />
+     </list>
+     <option name="SHOW_DIALOG" value="false" />
+     <option name="HIGHLIGHT_CONFLICTS" value="true" />
+@@ -32,7 +44,7 @@
+   <component name="GithubPullRequestsUISettings">{
+   &quot;selectedUrlAndAccountId&quot;: {
+     &quot;url&quot;: &quot;https://github.com/J0rge29/Proyecto.git&quot;,
+-    &quot;accountId&quot;: &quot;4fc3cf8f-952f-4126-b9b6-d101b5775fa1&quot;
++    &quot;accountId&quot;: &quot;03657545-5edc-4e85-9ae4-43dc9cb7bd30&quot;
+   }
+ }</component>
+   <component name="ProblemsViewState">
+@@ -51,8 +63,6 @@
+   </component>
+   <component name="PropertiesComponent">{
+   &quot;keyToString&quot;: {
+-    &quot;Application.GUIForm.executor&quot;: &quot;Run&quot;,
+-    &quot;Application.Mainwindow.executor&quot;: &quot;Run&quot;,
+     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+     &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+@@ -69,40 +79,6 @@
+     ]
+   }
+ }</component>
+-  <component name="RunManager" selected="Application.Mainwindow">
+-    <configuration name="GUIForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="rpg.gui.GUIForm" />
+-      <module name="Proyecto" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="rpg.gui.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <configuration name="Mainwindow" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+-      <option name="MAIN_CLASS_NAME" value="rpg.gui.Mainwindow" />
+-      <module name="Proyecto" />
+-      <extension name="coverage">
+-        <pattern>
+-          <option name="PATTERN" value="rpg.gui.*" />
+-          <option name="ENABLED" value="true" />
+-        </pattern>
+-      </extension>
+-      <method v="2">
+-        <option name="Make" enabled="true" />
+-      </method>
+-    </configuration>
+-    <recent_temporary>
+-      <list>
+-        <item itemvalue="Application.Mainwindow" />
+-        <item itemvalue="Application.GUIForm" />
+-      </list>
+-    </recent_temporary>
+-  </component>
+   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+   <component name="TaskManager">
+     <task active="true" id="Default" summary="Default task">
+@@ -128,71 +104,7 @@
+       <option name="project" value="LOCAL" />
+       <updated>1728613527995</updated>
+     </task>
+-    <task id="LOCAL-00003" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1730232753117</created>
+-      <option name="number" value="00003" />
+-      <option name="presentableId" value="LOCAL-00003" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1730232753117</updated>
+-    </task>
+-    <task id="LOCAL-00004" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1730605734216</created>
+-      <option name="number" value="00004" />
+-      <option name="presentableId" value="LOCAL-00004" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1730605734216</updated>
+-    </task>
+-    <task id="LOCAL-00005" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1730752071045</created>
+-      <option name="number" value="00005" />
+-      <option name="presentableId" value="LOCAL-00005" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1730752071045</updated>
+-    </task>
+-    <task id="LOCAL-00006" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1730753448741</created>
+-      <option name="number" value="00006" />
+-      <option name="presentableId" value="LOCAL-00006" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1730753448741</updated>
+-    </task>
+-    <task id="LOCAL-00007" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1730872339294</created>
+-      <option name="number" value="00007" />
+-      <option name="presentableId" value="LOCAL-00007" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1730872339294</updated>
+-    </task>
+-    <task id="LOCAL-00008" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1730873765148</created>
+-      <option name="number" value="00008" />
+-      <option name="presentableId" value="LOCAL-00008" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1730873765148</updated>
+-    </task>
+-    <task id="LOCAL-00009" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1731007355795</created>
+-      <option name="number" value="00009" />
+-      <option name="presentableId" value="LOCAL-00009" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731007355795</updated>
+-    </task>
+-    <task id="LOCAL-00010" summary="Merge remote-tracking branch 'origin/master'">
+-      <option name="closed" value="true" />
+-      <created>1731010843812</created>
+-      <option name="number" value="00010" />
+-      <option name="presentableId" value="LOCAL-00010" />
+-      <option name="project" value="LOCAL" />
+-      <updated>1731010843812</updated>
+-    </task>
+-    <option name="localTasksCounter" value="11" />
++    <option name="localTasksCounter" value="3" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+@@ -208,9 +120,7 @@
+   </component>
+   <component name="VcsManagerConfiguration">
+     <MESSAGE value="Update" />
+-    <MESSAGE value="Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml" />
+-    <MESSAGE value="Merge remote-tracking branch 'origin/master'" />
+-    <option name="LAST_COMMIT_MESSAGE" value="Merge remote-tracking branch 'origin/master'" />
++    <option name="LAST_COMMIT_MESSAGE" value="Update" />
+   </component>
+   <component name="XDebuggerManager">
+     <breakpoint-manager>
+@@ -224,15 +134,6 @@
+           <url>file://$PROJECT_DIR$/untitled/src/Main.java</url>
+           <line>11</line>
+           <option name="timeStamp" value="2" />
+-        </line-breakpoint>
+-        <line-breakpoint enabled="true" type="java-method">
+-          <url>file://$PROJECT_DIR$/src/rpg/gui/Mainwindow.java</url>
+-          <line>64</line>
+-          <properties class="rpg.gui.Mainwindow" method="main">
+-            <option name="EMULATED" value="true" />
+-            <option name="WATCH_EXIT" value="false" />
+-          </properties>
+-          <option name="timeStamp" value="4" />
+         </line-breakpoint>
+       </breakpoints>
+     </breakpoint-manager>
+Index: src/rpg/entities/enemies/Tyson/Tyson.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npackage rpg.entities.enemies.Tyson;\r\n\r\n\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.enums.Stats;\r\n\r\n/**\r\n * Clase base para el enemigo. El enemigo se llama Tyson.\r\n */\r\npublic class Tyson extends Enemy {\r\n\r\n    /**\r\n     * Constructor de la clase Tyson.\r\n     */\r\n\r\n    public Tyson() {\r\n        super(\"Tyson\");\r\n        this.stats.put(Stats.MAX_HP, 150); // Vida máxima de Tyson\r\n        this.stats.put(Stats.HP, 150); // Vida actual de Tyson\r\n        this.stats.put(Stats.ATTACK, 8); // Ataque de Tyson\r\n        this.stats.put(Stats.DEFENSE, 9); // Defensa de Tyson\r\n    }\r\n\r\n    /**\r\n     * Método que realiza el ataque 'golpe' de Tyson.\r\n     */\r\n    protected void golpe(GameCharacter enemy) {\r\n        int damage = this.stats.get(Stats.ATTACK);\r\n        enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);// Aplica el daño al enemigo\r\n        System.out.println(this.name + \" realiza un golpe callejero a \" + enemy.getName() + \" y causa \" + damage + \" de daño.\");\r\n        System.out.println(enemy.getName() + \" tiene \" + enemy.getStats().get(Stats.HP) + \" de vida restante.\");\r\n    }\r\n\r\n    /**\r\n     * Método que realiza el ataque 'Empujón'.\r\n     */\r\n    protected void empujon(GameCharacter enemy) {\r\n        int damage = (int) (this.stats.get(Stats.ATTACK) * 0.75); // Daño reducido para el empujón\r\n        enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage); // Aplica el daño al enemigo\r\n        System.out.println(this.name + \" empuja a \" + enemy.getName() + \" causando \" + damage + \" de daño.\");\r\n        System.out.println(enemy.getName() + \" tiene \" + enemy.getStats().get(Stats.HP) + \" de vida restante.\");\r\n    }\r\n\r\n    /**\r\n     * Método que define el ataque del enemigo Luiyi. Alterna entre 'Golpe Callejero' y 'Empujón'.\r\n     */\r\n    @Override\r\n    public void attack(GameCharacter enemy) {\r\n        if (Math.random() < 0.5) {\r\n            golpeCallejero(enemy); // 50% de probabilidad de usar Golpe Callejero\r\n        } else {\r\n            empujon(enemy); // 50% de probabilidad de usar Empujón\r\n            // }\r\n        }\r\n    }\r\n\r\n    public static class GameCharacter {\r\n\r\n\r\n        private Player player;\r\n        private Enemy enemy;\r\n\r\n        public Game() {\r\n            this.player = new Player(\"Hero\");\r\n            this.enemy = new Enemy(\"Goblin\");\r\n        }\r\n\r\n        public void startGame() {\r\n            while (player.isAlive() && enemy.isAlive()) {\r\n                player.attack(enemy);\r\n                if (enemy.isAlive()) {\r\n                    enemy.attack(player);\r\n                }\r\n            }\r\n\r\n            if (player.isAlive()) {\r\n                System.out.println(\"You defeated the enemy!\");\r\n            } else {\r\n                System.out.println(\"Game over. You were defeated by the enemy.\");\r\n            }\r\n        }\r\n\r\n\r\n\r\n\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/enemies/Tyson/Tyson.java b/src/rpg/entities/enemies/Tyson/Tyson.java
+--- a/src/rpg/entities/enemies/Tyson/Tyson.java	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/src/rpg/entities/enemies/Tyson/Tyson.java	(date 1732593201086)
+@@ -1,9 +1,10 @@
+ 
+ package rpg.entities.enemies.Tyson;
+-
+-
++import rpg.entities.GameCharacter;
+ import rpg.entities.enemies.Enemy;
+ import rpg.enums.Stats;
++import rpg.enums.EnemyType;
++
+ 
+ /**
+  * Clase base para el enemigo. El enemigo se llama Tyson.
+@@ -14,7 +15,7 @@
+      * Constructor de la clase Tyson.
+      */
+ 
+-    public Tyson() {
++    public Tyson () {
+         super("Tyson");
+         this.stats.put(Stats.MAX_HP, 150); // Vida máxima de Tyson
+         this.stats.put(Stats.HP, 150); // Vida actual de Tyson
+Index: src/rpg/inventory/Inventory.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/inventory/Inventory.java b/src/rpg/inventory/Inventory.java
+new file mode 100644
+--- /dev/null	(date 1732654997581)
++++ b/src/rpg/inventory/Inventory.java	(date 1732654997581)
+@@ -0,0 +1,26 @@
++package rpg.inventory;
++import rpg.entities.Player;
++import rpg.gui.panels.MiddlePanel;
++import rpg.items.Item;
++import java.util.ArrayList;
++
++public class Inventory{
++    int capacity;
++    private final ArrayList<Item> items = new ArrayList(15);
++
++    public Inventory() {
++    }
++
++    public void addItem(Item item) {
++        String addMessage = String.format("%s se ha agregado al Inventario!\n", item.getName());
++        MiddlePanel.getInstance().addText(this.items.add(item) ? addMessage : "Inventario Lleno.\n");
++    }
++
++    public void removeItem(Item item) {
++        this.items.remove(item);
++    }
++
++    public ArrayList<Item> getItems() {
++        return this.items;
++    }
++}
+Index: src/rpg/inventory/InventoryTest.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/inventory/InventoryTest.java b/src/rpg/inventory/InventoryTest.java
+new file mode 100644
+--- /dev/null	(date 1732651206613)
++++ b/src/rpg/inventory/InventoryTest.java	(date 1732651206613)
+@@ -0,0 +1,4 @@
++package rpg.inventory;
++
++public class InventoryTest {
++}
+Index: src/rpg/items/weapons/Weapon.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/items/weapons/Weapon.java b/src/rpg/items/weapons/Weapon.java
+new file mode 100644
+--- /dev/null	(date 1732651893569)
++++ b/src/rpg/items/weapons/Weapon.java	(date 1732651893569)
+@@ -0,0 +1,20 @@
++package rpg.items.weapons;
++
++import rpg.enums.ItemType;
++import rpg.enums.WeaponType;
++import rpg.items.Equipment;
++
++import java.util.HashMap;
++
++public abstract class Weapon extends Equipment {
++    protected WeaponType weaponType;
++
++    public Weapon(String name, String description, int price, WeaponType weaponType) {
++        super(name, description, price, ItemType.WEAPON);
++        this.weaponType = weaponType;
++    }
++
++    public WeaponType getWeaponType() {
++        return weaponType;
++    }
++}
+\ No newline at end of file
+Index: .idea/misc.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"ProjectRootManager\" version=\"2\" languageLevel=\"JDK_22_PREVIEW\" project-jdk-name=\"openjdk-23 (4)\" project-jdk-type=\"JavaSDK\" />\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/misc.xml b/.idea/misc.xml
+--- a/.idea/misc.xml	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/.idea/misc.xml	(date 1732593264121)
+@@ -1,4 +1,4 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="ProjectRootManager" version="2" languageLevel="JDK_22_PREVIEW" project-jdk-name="openjdk-23 (4)" project-jdk-type="JavaSDK" />
++  <component name="ProjectRootManager" version="2" languageLevel="JDK_23" default="true" project-jdk-name="openjdk-23 (4)" project-jdk-type="JavaSDK" />
+ </project>
+\ No newline at end of file
+Index: src/rpg/entities/GameCharacter.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.entities;\r\nimport rpg.enums.EnemyType;\r\nimport rpg.enums.Stats;\r\nimport rpg.utils.Randomize;\r\n\r\nimport javax.swing.*;\r\nimport java.util.HashMap;\r\n\r\npublic class GameCharacter {\r\n\r\n\r\n\r\n    protected String name;\r\n\r\n    protected HashMap<Stats, Integer> stats;\r\n\r\n    protected EnemyType type;\r\n\r\n    public GameCharacter(String name) {\r\n\r\n        this.name = name;\r\n        this.stats = new HashMap<>();\r\n    }\r\n\r\n    public boolean isAlive() {\r\n        return stats.get(Stats.HP) > 0;\r\n    }\r\n\r\n    public void attack(GameCharacter enemy) {\r\n\r\n        String message = \"\";\r\n        String enemyName = enemy.getName();\r\n        int damage = this.stats.get(Stats.ATTACK)\r\n                - enemy.getStats().get(Stats.DEFENSE);\r\n        int newHP = enemy.getStats().get(Stats.HP);\r\n        if (damage > 0) {\r\n\r\n            newHP = enemy.getStats().get(Stats.HP) - damage;\r\n            enemy.getStats().put(Stats.HP, newHP);\r\n            message += String.format(\"\"\"\r\n                            %s attacks %s for %d damage!\r\n                            %s has %d HP left.\r\n                            \"\"\", this.name, enemyName, damage,\r\n                    enemyName, newHP);\r\n        } else {\r\n            message += String.format(\"\"\"\r\n                    %s attacks %s but does no damage!\r\n                    %s has %d HP left.\r\n                    \"\"\", this.name, enemyName, enemyName, newHP);\r\n        }\r\n        System.out.println(message);\r\n    }\r\n\r\n    public void getEnemyType(GameCharacter enemy) {\r\n        int type = Randomize.getRandomInt(1, 4);\r\n        switch (type) {\r\n            case 1:\r\n                this.type = EnemyType.BASIC;\r\n                break;\r\n            case 2:\r\n                this.type = EnemyType.MEDIUM;\r\n                break;\r\n            case 3:\r\n                this.type = EnemyType.BOSS;\r\n            default:\r\n                this.type = EnemyType.SECRET;\r\n                break;\r\n        }\r\n    }\r\n\r\n    public String getName() {\r\n        return String.format(\"%s el Intrépido\", name);\r\n    }\r\n\r\n    public HashMap<Stats, Integer> getStats() {\r\n        return stats;\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/GameCharacter.java b/src/rpg/entities/GameCharacter.java
+--- a/src/rpg/entities/GameCharacter.java	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/src/rpg/entities/GameCharacter.java	(date 1732593201109)
+@@ -79,9 +79,4 @@
+ 
+ 
+ 
+-
+-
+-
+-
+-
+ }
+\ No newline at end of file
+Index: src/rpg/entities/enemies/Rogelio/Rogelio.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.entities.enemies.Rogelio;\r\n\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.enums.Stats;\r\n\r\n\r\n    /**\r\n     * Clase base para el enemigo Rogelio.\r\n     */\r\n    public class Rogelio extends Enemy {\r\n\r\n        /**\r\n         * Constructor de la clase Rogelio.\r\n         */\r\n        public Rogelio() {\r\n            super(\"Rogelio\");\r\n            this.stats.put(Stats.MAX_HP, 30); // Vida máxima de Rogelio\r\n            this.stats.put(Stats.HP, 30); // Vida actual de Rogelio\r\n            this.stats.put(Stats.ATTACK, 7); // Ataque de Rogelio\r\n            this.stats.put(Stats.DEFENSE, 4); // Defensa de Rogelio\r\n        }\r\n\r\n        /**\r\n         * Método que realiza el ataque 'Lanzamiento de piedra' de Rogelio.\r\n         *\r\n         * @param enemy El personaje enemigo que recibirá el ataque.\r\n         */\r\n        protected void lanzamientoDePiedra(GameCharacter enemy) {\r\n            int damage = 2;\r\n            enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage); // Aplica el daño al enemigo\r\n            System.out.println(this.name + \" lanza una piedra a \" + enemy.getName() + \" causando \" + damage + \" de daño.\");\r\n            System.out.println(enemy.getName() + \" tiene \" + enemy.getStats().get(Stats.HP) + \" de vida restante.\");\r\n        }\r\n\r\n        /**\r\n         * Método que realiza el ataque 'Bola de fuego\r\n         *\r\n         * @param enemy El personaje enemigo que recibirá el ataque.\r\n         */\r\n        protected void bolaDeBasura(GameCharacter enemy) {\r\n            int damage = 4;\r\n            enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage); // Aplica el daño al enemigo\r\n            System.out.println(this.name + \" lanza una bola de basura a \" + enemy.getName() + \" causando \" + damage + \" de daño.\");\r\n            System.out.println(enemy.getName() + \" tiene \" + enemy.getStats().get(Stats.HP) + \" de vida restante.\");\r\n        }\r\n\r\n        /**\r\n         * Método que define el ataque del enemigo Kevin. Alterna entre 'Lanzamiento de Piedra' y 'Bola de Fuego'.\r\n         *\r\n         * @param enemy El personaje enemigo que recibirá el ataque.\r\n         */\r\n        @Override\r\n        public void attack(GameCharacter enemy) {\r\n            if (Math.random() < 0.5) {\r\n                lanzamientoDePiedra(enemy); // 50% de probabilidad de usar Lanzamiento de Piedra\r\n            } else {\r\n                bolaDeBasura(enemy); // 50% de probabilidad de usar Bola de Fuego\r\n            }\r\n        }\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/enemies/Rogelio/Rogelio.java b/src/rpg/entities/enemies/Rogelio/Rogelio.java
+--- a/src/rpg/entities/enemies/Rogelio/Rogelio.java	(revision dcc5b34fad3eb4b02345bd9923ebb890a0123a2a)
++++ b/src/rpg/entities/enemies/Rogelio/Rogelio.java	(date 1732593201126)
+@@ -1,7 +1,8 @@
+ package rpg.entities.enemies.Rogelio;
+-
++import rpg.entities.GameCharacter;
+ import rpg.entities.enemies.Enemy;
+ import rpg.enums.Stats;
++import rpg.enums.EnemyType;
+ 
+ 
+     /**
+@@ -43,7 +44,9 @@
+             System.out.println(this.name + " lanza una bola de basura a " + enemy.getName() + " causando " + damage + " de daño.");
+             System.out.println(enemy.getName() + " tiene " + enemy.getStats().get(Stats.HP) + " de vida restante.");
+         }
+-
++        protected void RogelioType(){
++            this.type = EnemyType.BOSS;
++        }
+         /**
+          * Método que define el ataque del enemigo Kevin. Alterna entre 'Lanzamiento de Piedra' y 'Bola de Fuego'.
+          *
+@@ -72,4 +75,4 @@
+ 
+ 
+ 
+-}
++
+Index: src/rpg/items/armors/GoldenArmor.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/items/armors/GoldenArmor.java b/src/rpg/items/armors/GoldenArmor.java
+new file mode 100644
+--- /dev/null	(date 1732650436891)
++++ b/src/rpg/items/armors/GoldenArmor.java	(date 1732650436891)
+@@ -0,0 +1,55 @@
++package rpg.items.armors;
++
++import rpg.enums.ArmorType;
++import rpg.enums.ItemType;
++import rpg.items.Equipment;
++
++import java.util.HashMap;
++
++public abstract class GoldenArmor extends Equipment {
++    protected ArmorType armorType;
++    protected ItemType type;
++    protected int durability;
++    protected HashMap<String, Integer> elementalResistance;
++
++    public GoldenArmor(String name, String description, int price, ArmorType armorType, int durability){
++        this.name = "leather armor";
++        this.description = "ideal para ataques cuerpo a cuerpo";
++        this.price = 50;
++        this.armorType= ArmorType.HELMET;
++        this.durability = durability;
++        this.elementalResistance = new HashMap<>();
++    }
++
++    public ArmorType getArmorType() {
++        return armorType;
++    }
++
++    public int getDurability() {
++        return durability;
++    }
++
++    public void setDurability(int durability) {
++        this.durability = durability;
++    }
++
++    public void addElementalResistance(String element, int resistanceValue) {
++        elementalResistance.put(element, resistanceValue);
++    }
++
++    public int getElementalResistance(String element) {
++        return elementalResistance.getOrDefault(element, 0);
++    }
++
++    public void reduceDurability(int amount) {
++        this.durability -= amount;
++        if (this.durability < 0) {
++            this.durability = 0;
++        }
++    }
++
++    public boolean isBroken() {
++        return this.durability == 0;
++    }
++}
++
