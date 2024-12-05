@@ -4,7 +4,7 @@ import javax.swing.*;
 import javax.swing.plaf.basic.BasicLabelUI;
 import java.awt.*;
 
-public class LabelUI {
+public class LabelUI extends BasicLabelUI {
 
     private Dimension size;
     ImageIcon icon;

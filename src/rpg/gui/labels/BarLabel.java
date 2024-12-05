@@ -30,5 +30,12 @@ public class BarLabel extends JLabel {
         setText(String.format("%d / %d", value, maxValue));
     }
 
+    public int getBarValue(){
 
+        return barValue;
+    }
+
+    public int getMaxValue() {
+        return maxValue;
+    }
 }

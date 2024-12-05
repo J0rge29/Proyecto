@@ -5,7 +5,9 @@ import rpg.enums.Stats;
 import rpg.utils.Randomize;
 import rpg.enums.EnemyType;
 
-public abstract class Skeleton extends Enemy {
+import javax.swing.*;
+
+public class Skeleton extends Enemy {
 
     public Skeleton() {
         super("Skeleton");
@@ -17,7 +19,22 @@ public abstract class Skeleton extends Enemy {
     }
 
     @Override
-    public void attack(GameCharacter enemy) {
+    public ImageIcon getSprite() {
+        return null;
+    }
+
+    @Override
+    public void getLoot() {
+
+    }
+
+    @Override
+    protected void initCharacter() {
+
+    }
+
+    @Override
+    public String attack(GameCharacter enemy) {
         int attack = Randomize.getRandomInt(1, 3);
         switch (attack) {
             case 1:
@@ -29,7 +46,9 @@ public abstract class Skeleton extends Enemy {
                 hauntingScream(enemy);
                 break;
         }
+        return "";
     }
+
     protected void SkeletonType(){
         this.type = EnemyType.MEDIUM;
     }

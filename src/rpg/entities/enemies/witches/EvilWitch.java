@@ -6,7 +6,9 @@ import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
 import rpg.enums.EnemyType;
 
-public abstract class EvilWitch extends Enemy {
+import javax.swing.*;
+
+public class EvilWitch extends Enemy {
 
     /**
      * Constructor de la clase EvilWitch
@@ -48,11 +50,27 @@ public abstract class EvilWitch extends Enemy {
     }
 
     @Override
-    public void attack(GameCharacter enemy) {
+    public ImageIcon getSprite() {
+        return null;
+    }
+
+    @Override
+    public void getLoot() {
+
+    }
+
+    @Override
+    protected void initCharacter() {
+
+    }
+
+    @Override
+    public String attack(GameCharacter enemy) {
         if (Math.random() < 0.5) {
             castPowerfulSpell(enemy);
         } else {
             castSpell(enemy);
         }
+        return "";
     }
 }

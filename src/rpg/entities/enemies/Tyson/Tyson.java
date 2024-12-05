@@ -6,11 +6,13 @@ import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
 import rpg.enums.EnemyType;
 
+import javax.swing.*;
+
 
 /**
  * Clase base para el enemigo. El enemigo se llama Tyson.
  */
-public abstract class Tyson extends Enemy {
+public class Tyson extends Enemy {
 
     /**
      * Constructor de la clase Tyson.
@@ -44,17 +46,34 @@ public abstract class Tyson extends Enemy {
         System.out.println(enemy.getName() + " tiene " + enemy.getStats().get(Stats.HP) + " de vida restante.");
     }
 
+    @Override
+    public ImageIcon getSprite() {
+        return null;
+    }
+
+    @Override
+    public void getLoot() {
+
+    }
+
+    @Override
+    protected void initCharacter() {
+
+    }
+
     /**
      * Método que define el ataque del enemigo Luiyi. Alterna entre 'Golpe Callejero' y 'Empujón'.
      */
     @Override
-    public void attack(GameCharacter enemy) {
+    public String attack(GameCharacter enemy) {
         if (Math.random() < 0.5) {
             golpeCallejero(enemy); // 50% de probabilidad de usar Golpe Callejero
         } else {
             empujon(enemy); // 50% de probabilidad de usar Empujón
             // }
         }
+
+        return "";
     }
 
 }
