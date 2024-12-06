@@ -71,4 +71,7 @@ public class MainWindow extends JFrame {
     public Player getPlayer() {
         return player;
     }
+
+    public void checkImage() {
+    }
 }

@@ -27,7 +27,7 @@ public class AttackEvent implements ActionListener {
             this.game.appendText(player.attack(enemy));
             if (enemy.isAlive())
                 this.game.appendText(enemy.attack(player));
-            this.game.checkGameStatus();
+            this.game.checkImage();
         }
     }
 }
