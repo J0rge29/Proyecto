@@ -5,17 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
+      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/Goblin.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/Witch.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/Game.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/WindowConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/labels/BarLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/ui/LabelUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/ui/LabelUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/gui/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Proyecto/rpg/gui/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/events/AttackEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/events/AttackEvent.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,11 +71,12 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "252",
     "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HP/IdeaProjects/Proyecto",
+    "last_opened_file_path": "C:/Users/MSI 15/IdeaProjects/Proyecto2",
     "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/Proyecto/src/Main.java",
-    "project.structure.last.edited": "Libraries",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2"
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   },
   "keyToStringList": {
     "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
@@ -86,6 +85,15 @@
     ]
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\witches" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\undead" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\Tyson" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\Rogelio" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\goblins" />
+    </key>
+  </component>
   <component name="RunManager" selected="Application.MainWindow">
     <configuration name="GUIForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="rpg.gui.GUIForm" />
