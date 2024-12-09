@@ -5,40 +5,48 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/image/bars/life_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/bars/life_container.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/buttons/centerSide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/buttons/leftSide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/buttons/rightSide.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/enemies/Goblin.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/enemies/Rogelio.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/enemies/Skeleton.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/enemies/Tyson.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/enemies/Witch.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/icons/life_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/labels/goldLabel.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/labels/name_label_center.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/labels/name_label_left.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/labels/name_label_right.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/panels/battlePanel.webp" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/panels/mainBackground.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/panels/statusPanel.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/player/Player.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2024_01_45_p__m___Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_28_11_2024_01_45_p_ m__[Changes]/shelved.patch" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/entities/enemies/Tyson/Tyson.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/entities/enemies/goblins/Goblin.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/entities/enemies/undead/Skeleton.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/entities/enemies/witches/Witch.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/MainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/buttons/events/AttackEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/buttons/events/AttackEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/Goblin.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/Witch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/Game$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/Game$2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/GameCharacter.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/Enemy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/Tyson/Tyson.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/goblins/goblin.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/undead/Skeleton.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/undead/Skeleton.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/undead/Skeleton.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/entities/enemies/witches/Witch.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/enums/ArmorType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/enums/BarType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/enums/EnemyType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/enums/ItemType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/enums/Stats.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/enums/WeaponType.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/exceptions/EnemyDeathException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/exceptions/InventoryFullException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/exceptions/ItemNotFoundException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/factory/EnemyFactory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/gui/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/production/Proyecto/rpg/gui/MainWindow.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/gui/buttons/AttackButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/gui/buttons/BaseButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/gui/buttons/HoverButtonUI.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/gui/buttons/UserButton.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/gui/buttons/events/AttackEvent.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/inventory/Inventory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/items/Equipment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/items/Item.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/items/armors/Armor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/production/Proyecto/rpg/items/miscs/Misc.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/events/AttackEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/events/AttackEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/MiddlePanel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/Toppanel.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +74,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/J0rge29/Proyecto.git&quot;,
-    &quot;accountId&quot;: &quot;4fc3cf8f-952f-4126-b9b6-d101b5775fa1&quot;
+    &quot;accountId&quot;: &quot;03657545-5edc-4e85-9ae4-43dc9cb7bd30&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -83,40 +91,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GUIForm.executor": "Run",
-    "Application.MainWindow.executor": "Run",
-    "Application.Mainwindow.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "252",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/MSI 15/IdeaProjects/Proyecto2",
-    "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/Proyecto/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GUIForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Mainwindow.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;252&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI 15/IdeaProjects/Proyecto2&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JavaFX",
-      "CSS"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JavaFX&quot;,
+      &quot;CSS&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\panels" />
-      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\labels" />
-      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\icons" />
-      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\bars" />
-      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\player" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\witches" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\undead" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\Tyson" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\Rogelio" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\src\rpg\entities\enemies\goblins" />
     </key>
   </component>
   <component name="RunManager" selected="Application.MainWindow">
@@ -296,23 +304,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733256500541</updated>
     </task>
-    <task id="LOCAL-00016" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733508821989</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1733508821989</updated>
-    </task>
-    <task id="LOCAL-00017" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733508834335</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1733508834335</updated>
-    </task>
-    <option name="localTasksCounter" value="18" />
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
