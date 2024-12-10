@@ -1,0 +1,228 @@
+Index: src/rpg/entities/Game.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.entities;\r\n\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.entities.enemies.witches.EvilWitch;\r\n\r\nimport javax.swing.*;\r\n\r\npublic class Game {\r\n    /**\r\n     * Nombres de los pesonajes\r\n     */\r\n    private Player player;\r\n    private Enemy enemy;\r\n\r\n    public Game() {\r\n        this.enemy = new Enemy(\"EvilWitch\");\r\n        this.enemy = new Enemy(\"Skeleton\");\r\n        this.player = new Player(\"Hero\");\r\n    }\r\n\r\n    public void startGame() {\r\n        /**\r\n         *\tFuncion que inicia el juego\r\n         */\r\n        while (player.isAlive() && enemy.isAlive()) {\r\n            player.attack(enemy);\r\n            if (enemy.isAlive()) {\r\n                enemy.attack(player);\r\n            }\r\n        }\r\n        /**\r\n         *\tFuncion que se ejecuta mientras alguno de los personajes muera\r\n         */\r\n        if (player.isAlive()) {\r\n            JOptionPane.showMessageDialog(null, \"Derrotaste al anemigo\");\r\n        } else {\r\n            JOptionPane.showMessageDialog(null, \"Fin del juego\");\r\n        }\r\n    }\r\n}\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/Game.java b/src/rpg/entities/Game.java
+--- a/src/rpg/entities/Game.java	(revision 8df909aac3ffd2a07812aeef4f3467a9f34200fa)
++++ b/src/rpg/entities/Game.java	(date 1733429174491)
+@@ -13,8 +13,48 @@
+     private Enemy enemy;
+ 
+     public Game() {
+-        this.enemy = new Enemy("EvilWitch");
+-        this.enemy = new Enemy("Skeleton");
++        this.enemy = new Enemy("EvilWitch") {
++            @Override
++            public ImageIcon getSprite() {
++                return null;
++            }
++
++            @Override
++            public void getLoot() {
++
++            }
++
++            @Override
++            public String attack(GameCharacter enemy) {
++                return "";
++            }
++
++            @Override
++            protected void initCharacter() {
++
++            }
++        };
++        this.enemy = new Enemy("Skeleton") {
++            @Override
++            public ImageIcon getSprite() {
++                return null;
++            }
++
++            @Override
++            public void getLoot() {
++
++            }
++
++            @Override
++            public String attack(GameCharacter enemy) {
++                return "";
++            }
++
++            @Override
++            protected void initCharacter() {
++
++            }
++        };
+         this.player = new Player("Hero");
+     }
+ 
+Index: src/rpg/entities/enemies/undead/Skeleton.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.entities.enemies.undead;\r\nimport rpg.entities.GameCharacter;\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.enums.Stats;\r\nimport rpg.exceptions.EnemyDeathException;\r\nimport rpg.utils.Randomize;\r\nimport rpg.enums.EnemyType;\r\nimport rpg.exceptions.EnemyDeathException;\r\n\r\npublic class Skeleton extends Enemy {\r\n\r\n    public Skeleton() {\r\n\r\n        super(\"Skeleton\");\r\n        ImageCache.addImage(\"skeleton\", \"enemies/undead/Skeleton.png\");\r\n    }\r\n\r\n    @Override\r\n    public void getLoot() {\r\n        System.out.println(\"El esqueleto deja caer una pequeña bolsa de monedas.\");\r\n    }\r\n\r\n    public void initCharacter() {\r\n        this.type = EnemyType.MEDIUM;\r\n        this.stats.put(Stats.MAX_HP, 45);\r\n        this.stats.put(Stats.HP, 45);\r\n        this.stats.put(Stats.ATTACK, 8);\r\n        this.stats.put(Stats.DEFENSE, 4);\r\n    }\r\n\r\n    public String attack(GameCharacter enemy) {\r\n        String message;\r\n        // Se elige un número aleatorio entre 1 y 100\r\n        int random = Randomize.getRandomInt(1, 100);\r\n        // 50% de probabilidad de atacar normalmente\r\n        // 25% de probabilidad de morder\r\n        // 25% de probabilidad de lanzar una roca\r\n        int attack = (random <= 50) ? 3 : (random <= 75) ? 2 : 1;\r\n        // Se elige el ataque a realizar\r\n        switch (attack) {\r\n            case 1:\r\n                try {\r\n                    message = boneStrike(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            La bruja malvada lanza un poderoso hechizo y te hace 10 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            case 2:\r\n                try {\r\n                    message = hauntingScream(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            La bruja malvada  te lanza un hechizco común y te hace 5 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            default:\r\n                message = ((GameCharacter) this).attack(enemy);\r\n                break;\r\n        }\r\n        return message;\r\n    }\r\n\r\n    protected String boneStrike(GameCharacter enemy) throws EnemyDeathException {\r\n        int damage = 4;\r\n        int newHP = reduceHP(enemy, damage);\r\n        String enemyName = enemy.getName();\r\n        String message = String.format(\"\"\"\r\n                ¡%s ataca con un golpe de hueso a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n        return message;\r\n    }\r\n\r\n    protected String hauntingScream(GameCharacter enemy) throws EnemyDeathException{\r\n        int damage = 2;\r\n        int newHP = reduceHP(enemy, damage);\r\n        String enemyName = enemy.getName();\r\n        String message = String.format(\"\"\"\r\n                ¡%s muerde salvajemente a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n        return message;\r\n    }\r\n    @Override\r\n    public ImageIcon getSprite() {\r\n\r\n        return ImageCache.getImageIcon(\"skeleton\");\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/enemies/undead/Skeleton.java b/src/rpg/entities/enemies/undead/Skeleton.java
+--- a/src/rpg/entities/enemies/undead/Skeleton.java	(revision 8df909aac3ffd2a07812aeef4f3467a9f34200fa)
++++ b/src/rpg/entities/enemies/undead/Skeleton.java	(date 1733429062267)
+@@ -6,6 +6,9 @@
+ import rpg.utils.Randomize;
+ import rpg.enums.EnemyType;
+ import rpg.exceptions.EnemyDeathException;
++import rpg.utils.cache.ImageCache;
++
++import javax.swing.*;
+ 
+ public class Skeleton extends Enemy {
+ 
+Index: src/rpg/gui/MainWindow.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.gui;\r\n\r\nimport rpg.entities.Player;\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.gui.panels.Toppanel;\r\n\r\nimport javax.swing.*;\r\nimport java.awt.*;\r\n\r\npublic class MainWindow extends JFrame {\r\n\r\n    private JPanel mainpanel;\r\n    private JButton button1;\r\n    private JButton button2;\r\n    private JButton button3;\r\n    private JButton button4;\r\n    private JPanel topPanel;\r\n    private JButton button5;\r\n    private JButton button6;\r\n    private JButton button7;\r\n    private JTextArea textDisplay;\r\n    private JScrollPane textScroll;\r\n    private Player player;\r\n    private Enemy enemy;\r\n\r\n    public static void main(String[] args) {\r\n        new MainWindow();\r\n    }\r\n\r\n    public MainWindow() {\r\n        setContentPane(mainpanel);\r\n    }\r\n\r\n    private void createUIComponents() {\r\n        topPanel = new Toppanel();\r\n    }\r\n\r\n\r\n    private void initComponents() {\r\n        // Acciones previas en el panel\r\n        // Definimos la forma de trabajo del ScrollPane\r\n        // Hacemos que el ScrollPane no tenga bordes y sea transparente\r\n        textScroll.getViewport().setOpaque(false);\r\n        textScroll.setBorder(null);\r\n        // Hacemos que el ScrollPane tenga solo la barra vertical\r\n        textScroll.setVerticalScrollBarPolicy(\r\n                JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);\r\n        textScroll.setHorizontalScrollBarPolicy(\r\n                JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);\r\n        // Definimos el color de fondo del display en Blanco y su fuente en 28px\r\n        textDisplay.setFont(UIConstants.FONT.deriveFont(28f));\r\n        textDisplay.setForeground(Color.WHITE);\r\n        // Configuramos el scrool del textDisplay\r\n        textDisplay.setColumns(1);\r\n        textDisplay.setEditable(false);\r\n        textDisplay.setLineWrap(true);\r\n        textDisplay.setWrapStyleWord(true);\r\n    }\r\n\r\n    public void appendText (String text){\r\n        // Añadimos el texto al textDisplay\r\n        textDisplay.append(text);\r\n        // Hacemos que el textDisplay se desplace al final del texto\r\n        textDisplay.setCaretPosition(textDisplay.getDocument().getLength());\r\n    }\r\n\r\n    public Enemy getEnemy() {\r\n        return enemy;\r\n    }\r\n\r\n    public Player getPlayer() {\r\n        return player;\r\n    }\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/gui/MainWindow.java b/src/rpg/gui/MainWindow.java
+--- a/src/rpg/gui/MainWindow.java	(revision 8df909aac3ffd2a07812aeef4f3467a9f34200fa)
++++ b/src/rpg/gui/MainWindow.java	(date 1733429215022)
+@@ -71,4 +71,7 @@
+     public Player getPlayer() {
+         return player;
+     }
++
++    public void checkGameStatus() {
++    }
+ }
+Index: .idea/workspace.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><?xml version=\"1.0\" encoding=\"UTF-8\"?>\r\n<project version=\"4\">\r\n  <component name=\"AutoImportSettings\">\r\n    <option name=\"autoReloadType\" value=\"SELECTIVE\" />\r\n  </component>\r\n  <component name=\"ChangeListManager\">\r\n    <list default=\"true\" id=\"f1988fd4-e346-4053-9acf-fd3b1999a9eb\" name=\"Changes\" comment=\"Merge remote-tracking branch 'origin/master'\">\r\n      <change beforePath=\"$PROJECT_DIR$/.idea/workspace.xml\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/.idea/workspace.xml\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java\" afterDir=\"false\" />\r\n      <change beforePath=\"$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java\" beforeDir=\"false\" afterPath=\"$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java\" afterDir=\"false\" />\r\n    </list>\r\n    <option name=\"SHOW_DIALOG\" value=\"false\" />\r\n    <option name=\"HIGHLIGHT_CONFLICTS\" value=\"true\" />\r\n    <option name=\"HIGHLIGHT_NON_ACTIVE_CHANGELIST\" value=\"false\" />\r\n    <option name=\"LAST_RESOLUTION\" value=\"IGNORE\" />\r\n  </component>\r\n  <component name=\"FileTemplateManagerImpl\">\r\n    <option name=\"RECENT_TEMPLATES\">\r\n      <list>\r\n        <option value=\"Enum\" />\r\n        <option value=\"Class\" />\r\n      </list>\r\n    </option>\r\n  </component>\r\n  <component name=\"Git.Settings\">\r\n    <option name=\"RECENT_GIT_ROOT_PATH\" value=\"$PROJECT_DIR$\" />\r\n  </component>\r\n  <component name=\"GitHubPullRequestSearchHistory\">{\r\n  &quot;lastFilter&quot;: {\r\n    &quot;state&quot;: &quot;OPEN&quot;,\r\n    &quot;assignee&quot;: &quot;J0rge29&quot;\r\n  }\r\n}</component>\r\n  <component name=\"GithubPullRequestsUISettings\">{\r\n  &quot;selectedUrlAndAccountId&quot;: {\r\n    &quot;url&quot;: &quot;https://github.com/J0rge29/Proyecto.git&quot;,\r\n    &quot;accountId&quot;: &quot;4fc3cf8f-952f-4126-b9b6-d101b5775fa1&quot;\r\n  }\r\n}</component>\r\n  <component name=\"ProblemsViewState\">\r\n    <option name=\"selectedTabId\" value=\"CurrentFile\" />\r\n  </component>\r\n  <component name=\"ProjectColorInfo\">{\r\n  &quot;associatedIndex&quot;: 7\r\n}</component>\r\n  <component name=\"ProjectId\" id=\"2mV6iUKpD9c62sALCgUF8iE87Ar\" />\r\n  <component name=\"ProjectLevelVcsManager\" settingsEditedManually=\"true\">\r\n    <OptionsSetting value=\"false\" id=\"Update\" />\r\n  </component>\r\n  <component name=\"ProjectViewState\">\r\n    <option name=\"hideEmptyMiddlePackages\" value=\"true\" />\r\n    <option name=\"showLibraryContents\" value=\"true\" />\r\n  </component>\r\n  <component name=\"PropertiesComponent\">{\r\n  &quot;keyToString&quot;: {\r\n    &quot;Application.GUIForm.executor&quot;: &quot;Run&quot;,\r\n    &quot;Application.Mainwindow.executor&quot;: &quot;Run&quot;,\r\n    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,\r\n    &quot;git-widget-placeholder&quot;: &quot;master&quot;,\r\n    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,\r\n    &quot;last_opened_file_path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto&quot;,\r\n    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto/src/Main.java&quot;,\r\n    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,\r\n    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,\r\n    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;\r\n  },\r\n  &quot;keyToStringList&quot;: {\r\n    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [\r\n      &quot;JavaFX&quot;,\r\n      &quot;CSS&quot;\r\n    ]\r\n  }\r\n}</component>\r\n  <component name=\"RunManager\" selected=\"Application.Mainwindow\">\r\n    <configuration name=\"GUIForm\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"rpg.gui.GUIForm\" />\r\n      <module name=\"Proyecto\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"rpg.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <configuration name=\"Mainwindow\" type=\"Application\" factoryName=\"Application\" temporary=\"true\" nameIsGenerated=\"true\">\r\n      <option name=\"MAIN_CLASS_NAME\" value=\"rpg.gui.Mainwindow\" />\r\n      <module name=\"Proyecto\" />\r\n      <extension name=\"coverage\">\r\n        <pattern>\r\n          <option name=\"PATTERN\" value=\"rpg.gui.*\" />\r\n          <option name=\"ENABLED\" value=\"true\" />\r\n        </pattern>\r\n      </extension>\r\n      <method v=\"2\">\r\n        <option name=\"Make\" enabled=\"true\" />\r\n      </method>\r\n    </configuration>\r\n    <recent_temporary>\r\n      <list>\r\n        <item itemvalue=\"Application.Mainwindow\" />\r\n        <item itemvalue=\"Application.GUIForm\" />\r\n      </list>\r\n    </recent_temporary>\r\n  </component>\r\n  <component name=\"SpellCheckerSettings\" RuntimeDictionaries=\"0\" Folders=\"0\" CustomDictionaries=\"0\" DefaultDictionary=\"application-level\" UseSingleDictionary=\"true\" transferred=\"true\" />\r\n  <component name=\"TaskManager\">\r\n    <task active=\"true\" id=\"Default\" summary=\"Default task\">\r\n      <changelist id=\"f1988fd4-e346-4053-9acf-fd3b1999a9eb\" name=\"Changes\" comment=\"\" />\r\n      <created>1727149523095</created>\r\n      <option name=\"number\" value=\"Default\" />\r\n      <option name=\"presentableId\" value=\"Default\" />\r\n      <updated>1727149523095</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00001\" summary=\"Update\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1728067276655</created>\r\n      <option name=\"number\" value=\"00001\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00001\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1728067276655</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00002\" summary=\"Update\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1728613527995</created>\r\n      <option name=\"number\" value=\"00002\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00002\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1728613527995</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00003\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730232753117</created>\r\n      <option name=\"number\" value=\"00003\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00003\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730232753117</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00004\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730605734216</created>\r\n      <option name=\"number\" value=\"00004\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00004\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730605734216</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00005\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730752071045</created>\r\n      <option name=\"number\" value=\"00005\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00005\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730752071045</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00006\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730753448741</created>\r\n      <option name=\"number\" value=\"00006\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00006\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730753448741</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00007\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730872339294</created>\r\n      <option name=\"number\" value=\"00007\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00007\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730872339294</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00008\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1730873765148</created>\r\n      <option name=\"number\" value=\"00008\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00008\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1730873765148</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00009\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1731007355795</created>\r\n      <option name=\"number\" value=\"00009\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00009\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1731007355795</updated>\r\n    </task>\r\n    <task id=\"LOCAL-00010\" summary=\"Merge remote-tracking branch 'origin/master'\">\r\n      <option name=\"closed\" value=\"true\" />\r\n      <created>1731010843812</created>\r\n      <option name=\"number\" value=\"00010\" />\r\n      <option name=\"presentableId\" value=\"LOCAL-00010\" />\r\n      <option name=\"project\" value=\"LOCAL\" />\r\n      <updated>1731010843812</updated>\r\n    </task>\r\n    <option name=\"localTasksCounter\" value=\"11\" />\r\n    <servers />\r\n  </component>\r\n  <component name=\"Vcs.Log.Tabs.Properties\">\r\n    <option name=\"TAB_STATES\">\r\n      <map>\r\n        <entry key=\"MAIN\">\r\n          <value>\r\n            <State />\r\n          </value>\r\n        </entry>\r\n      </map>\r\n    </option>\r\n  </component>\r\n  <component name=\"VcsManagerConfiguration\">\r\n    <MESSAGE value=\"Update\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'&#10;&#10;# Conflicts:&#10;#&#9;.idea/workspace.xml\" />\r\n    <MESSAGE value=\"Merge remote-tracking branch 'origin/master'\" />\r\n    <option name=\"LAST_COMMIT_MESSAGE\" value=\"Merge remote-tracking branch 'origin/master'\" />\r\n  </component>\r\n  <component name=\"XDebuggerManager\">\r\n    <breakpoint-manager>\r\n      <breakpoints>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/src/untitled/src/Main.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"1\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-line\">\r\n          <url>file://$PROJECT_DIR$/untitled/src/Main.java</url>\r\n          <line>11</line>\r\n          <option name=\"timeStamp\" value=\"2\" />\r\n        </line-breakpoint>\r\n        <line-breakpoint enabled=\"true\" type=\"java-method\">\r\n          <url>file://$PROJECT_DIR$/src/rpg/gui/MainWindow.java</url>\r\n          <line>64</line>\r\n          <properties class=\"rpg.gui.Mainwindow\">\r\n            <option name=\"EMULATED\" value=\"true\" />\r\n            <option name=\"WATCH_EXIT\" value=\"false\" />\r\n          </properties>\r\n          <option name=\"timeStamp\" value=\"4\" />\r\n        </line-breakpoint>\r\n      </breakpoints>\r\n    </breakpoint-manager>\r\n  </component>\r\n</project>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	(revision 8df909aac3ffd2a07812aeef4f3467a9f34200fa)
++++ b/.idea/workspace.xml	(date 1733429174639)
+@@ -5,10 +5,15 @@
+   </component>
+   <component name="ChangeListManager">
+     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
++      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/goblin.png" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.jpg" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/witch.jpg" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++      <change beforePath="$PROJECT_DIR$/src/rpg/entities/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/Game.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Rogelio/Rogelio.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/Tyson/Tyson.java" afterDir="false" />
+-      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/undead/Skeleton.java" afterDir="false" />
+       <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/witches/EvilWitch.java" afterDir="false" />
+     </list>
+@@ -74,6 +79,15 @@
+     ]
+   }
+ }</component>
++  <component name="RecentsManager">
++    <key name="MoveFile.RECENT_KEYS">
++      <recent name="C:\Users\HP\IdeaProjects\Proyecto\src\rpg\entities\enemies\undead" />
++      <recent name="C:\Users\HP\IdeaProjects\Proyecto\src\rpg\entities\enemies\Tyson" />
++      <recent name="C:\Users\HP\IdeaProjects\Proyecto\src\rpg\entities\enemies\Rogelio" />
++      <recent name="C:\Users\HP\IdeaProjects\Proyecto\src\rpg\entities\enemies\goblins" />
++      <recent name="C:\Users\HP\IdeaProjects\Proyecto\src\rpg\entities\enemies\witches" />
++    </key>
++  </component>
+   <component name="RunManager" selected="Application.Mainwindow">
+     <configuration name="GUIForm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+       <option name="MAIN_CLASS_NAME" value="rpg.gui.GUIForm" />
+@@ -197,7 +211,15 @@
+       <option name="project" value="LOCAL" />
+       <updated>1731010843812</updated>
+     </task>
+-    <option name="localTasksCounter" value="11" />
++    <task id="LOCAL-00011" summary="Merge remote-tracking branch 'origin/master'">
++      <option name="closed" value="true" />
++      <created>1733276010882</created>
++      <option name="number" value="00011" />
++      <option name="presentableId" value="LOCAL-00011" />
++      <option name="project" value="LOCAL" />
++      <updated>1733276010882</updated>
++    </task>
++    <option name="localTasksCounter" value="12" />
+     <servers />
+   </component>
+   <component name="Vcs.Log.Tabs.Properties">
+Index: src/rpg/entities/enemies/Tyson/Tyson.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\npackage rpg.entities.enemies.Tyson;\r\n\r\nimport rpg.entities.GameCharacter;\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.enums.Stats;\r\nimport rpg.enums.EnemyType;\r\nimport rpg.exceptions.EnemyDeathException;\r\nimport rpg.utils.Randomize;\r\n\r\n\r\n/**\r\n * Clase base para el enemigo. El enemigo se llama Tyson.\r\n */\r\npublic class Tyson extends Enemy {\r\n\r\n    /**\r\n     * Constructor de la clase Tyson.\r\n     */\r\n\r\n    public Tyson () {\r\n\r\n        super(\"Tyson\");\r\n        ImageCache.addImage(\"Tyson\", \"enemies/goblins/evil_witch.png\");\r\n    }\r\n\r\n    @Override\r\n    public void getLoot() {\r\n        System.out.println(\"Tyson deja caer una tesoro lleno de monedas.\");\r\n    }\r\n\r\n    protected void initCharacter(){\r\n        this.type = EnemyType.BOSS;\r\n        this.stats.put(Stats.MAX_HP, 150); // Vida máxima de Tyson\r\n        this.stats.put(Stats.HP, 150); // Vida actual de Tyson\r\n        this.stats.put(Stats.ATTACK, 8); // Ataque de Tyson\r\n        this.stats.put(Stats.DEFENSE, 9); // Defensa de Tyson\r\n    }\r\n    /**\r\n     * Método que define el ataque del enemigo Luiyi. Alterna entre 'Golpe Callejero' y 'Empujón'.\r\n     */\r\n\r\n    public String attack(GameCharacter enemy) {\r\n        String message;\r\n        // Se elige un número aleatorio entre 1 y 100\r\n        int random = Randomize.getRandomInt(1, 100);\r\n        // 50% de probabilidad de atacar normalmente\r\n        // 25% de probabilidad de morder\r\n        // 25% de probabilidad de lanzar una roca\r\n        int attack = (random <= 50) ? 3 : (random <= 75) ? 2 : 1;\r\n        // Se elige el ataque a realizar\r\n        switch (attack) {\r\n            case 1:\r\n                try {\r\n                    message = golpeCallejero(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            Tyson realiza un golpe callejero y te hace 10 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            case 2:\r\n                try {\r\n                    message = empujon(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            Tyson  te da un fuerte empujón y te hace 30 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            default:\r\n                message = ((GameCharacter) this).attack(enemy);\r\n                break;\r\n        }\r\n        return message;\r\n    }\r\n    /**\r\n     * Método que realiza el ataque 'golpe' de Tyson.\r\n     */\r\n    protected String golpeCallejero(GameCharacter enemy) throws EnemyDeathException {\r\n        int damage = 10;\r\n        int newHP = reduceHP(enemy, damage);\r\n        String enemyName = enemy.getName();\r\n        String message = String.format(\"\"\"\r\n                ¡%s realiza un golpe callejero a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n        return message;\r\n    }\r\n\r\n    /**\r\n     * Método que realiza el ataque 'Empujón'.\r\n     */\r\n    protected String empujon(GameCharacter enemy) throws EnemyDeathException{\r\n        int damage = 30;\r\n        int newHP = reduceHP(enemy, damage);\r\n        String enemyName = enemy.getName();\r\n        String message = String.format(\"\"\"\r\n                ¡%s empuja a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n        return message;\r\n    }\r\n    @Override\r\n    public ImageIcon getSprite() {\r\n\r\n        return ImageCache.getImageIcon(\"Tyson\");\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/enemies/Tyson/Tyson.java b/src/rpg/entities/enemies/Tyson/Tyson.java
+--- a/src/rpg/entities/enemies/Tyson/Tyson.java	(revision 8df909aac3ffd2a07812aeef4f3467a9f34200fa)
++++ b/src/rpg/entities/enemies/Tyson/Tyson.java	(date 1733428970364)
+@@ -7,6 +7,9 @@
+ import rpg.enums.EnemyType;
+ import rpg.exceptions.EnemyDeathException;
+ import rpg.utils.Randomize;
++import rpg.utils.cache.ImageCache;
++
++import javax.swing.*;
+ 
+ 
+ /**
+Index: src/rpg/entities/enemies/Rogelio/Rogelio.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.entities.enemies.Rogelio;\r\nimport rpg.entities.GameCharacter;\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.enums.Stats;\r\nimport rpg.enums.EnemyType;\r\nimport rpg.exceptions.EnemyDeathException;\r\nimport rpg.utils.Randomize;\r\n\r\n\r\n/**\r\n     * Clase base para el enemigo Rogelio.\r\n     */\r\n    public class Rogelio extends Enemy {\r\n\r\n        /**\r\n         * Constructor de la clase Rogelio.\r\n         */\r\n        public Rogelio() {\r\n            super(\"Rogelio\");\r\n            ImageCache.addImage(\"Rogelio\", \"enemies/goblins/evil_witch.png\");\r\n        }\r\n\r\n        @Override\r\n        public void getLoot() {\r\n            System.out.println(\"Rogelio deja caer una gran bolsa de monedas.\");\r\n        }\r\n\r\n        public void initCharacter(){\r\n            this.type = EnemyType.SECRET;\r\n            this.stats.put(Stats.MAX_HP, 30); // Vida máxima de Rogelio\r\n            this.stats.put(Stats.HP, 30); // Vida actual de Rogelio\r\n            this.stats.put(Stats.ATTACK, 7); // Ataque de Rogelio\r\n            this.stats.put(Stats.DEFENSE, 4); // Defensa de Rogelio\r\n        }\r\n    /**\r\n     * Método que define el ataque del enemigo Kevin. Alterna entre 'Lanzamiento de Piedra' y 'Bola de Fuego'.\r\n     *\r\n     * @param enemy El personaje enemigo que recibirá el ataque.\r\n     */\r\n    public String attack(GameCharacter enemy) {\r\n        String message;\r\n        // Se elige un número aleatorio entre 1 y 100\r\n        int random = Randomize.getRandomInt(1, 100);\r\n        // 50% de probabilidad de atacar normalmente\r\n        // 25% de probabilidad de morder\r\n        // 25% de probabilidad de lanzar una roca\r\n        int attack = (random <= 50) ? 3 : (random <= 75) ? 2 : 1;\r\n        // Se elige el ataque a realizar\r\n        switch (attack) {\r\n            case 1:\r\n                try {\r\n                    message = lanzamientoDePiedra(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            Rogelio lanza una piedra y te hace 20 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            case 2:\r\n                try {\r\n                    message = bolaDeBasura(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            Rogelio  te lanza una bola de basura y te hace 15 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            default:\r\n                message = ((GameCharacter) this).attack(enemy);\r\n                break;\r\n        }\r\n        return message;\r\n    }\r\n        /**\r\n         * Método que realiza el ataque 'Lanzamiento de piedra' de Rogelio.\r\n         *\r\n         * @param enemy El personaje enemigo que recibirá el ataque.\r\n         */\r\n        protected String lanzamientoDePiedra(GameCharacter enemy) throws EnemyDeathException {\r\n            int damage = 20;\r\n            int newHP = reduceHP(enemy, damage);\r\n            String enemyName = enemy.getName();\r\n            String message = String.format(\"\"\"\r\n                ¡%s lanza una una piedra gigante a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n            return message;\r\n        }\r\n\r\n        /**\r\n         * Método que realiza el ataque 'Bola de fuego\r\n         *\r\n         * @param enemy El personaje enemigo que recibirá el ataque.\r\n         */\r\n        protected String bolaDeBasura(GameCharacter enemy) throws EnemyDeathException{\r\n            int damage = 15;\r\n            int newHP = reduceHP(enemy, damage);\r\n            String enemyName = enemy.getName();\r\n            String message = String.format(\"\"\"\r\n                ¡%s lanza una bola de basura a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n            return message;\r\n        }\r\n        @Override\r\n        public ImageIcon getSprite() {\r\n\r\n        return ImageCache.getImageIcon(\"Rogelio\");\r\n        }\r\n\r\n    }\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/enemies/Rogelio/Rogelio.java b/src/rpg/entities/enemies/Rogelio/Rogelio.java
+--- a/src/rpg/entities/enemies/Rogelio/Rogelio.java	(revision 8df909aac3ffd2a07812aeef4f3467a9f34200fa)
++++ b/src/rpg/entities/enemies/Rogelio/Rogelio.java	(date 1733428970348)
+@@ -5,6 +5,9 @@
+ import rpg.enums.EnemyType;
+ import rpg.exceptions.EnemyDeathException;
+ import rpg.utils.Randomize;
++import rpg.utils.cache.ImageCache;
++
++import javax.swing.*;
+ 
+ 
+ /**
+Index: src/rpg/entities/enemies/witches/EvilWitch.java
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>package rpg.entities.enemies.witches;\r\n\r\nimport rpg.utils.Randomize;\r\nimport rpg.entities.GameCharacter;\r\nimport rpg.entities.enemies.Enemy;\r\nimport rpg.enums.Stats;\r\nimport rpg.enums.EnemyType;\r\nimport rpg.exceptions.EnemyDeathException;\r\n\r\npublic class EvilWitch extends Enemy {\r\n\r\n\r\n    public EvilWitch() {\r\n\r\n        super(\"Evil Witch\");\r\n        ImageCache.addImage(\"evil_witch\", \"enemies/goblins/evil_witch.png\");\r\n    }\r\n\r\n    @Override\r\n    public void getLoot() {\r\n        System.out.println(\"La bruja malvada deja caer una gran bolsa de monedas.\");\r\n    }\r\n\r\n    /**\r\n     * Constructor de la clase EvilWitch\r\n     */\r\n\r\n    protected void initCharacter() {\r\n        this.type = EnemyType.SECRET;\r\n        this.stats.put(Stats.MAX_HP, 35);\r\n        this.stats.put(Stats.HP, 35);\r\n        this.stats.put(Stats.ATTACK, 6);\r\n        this.stats.put(Stats.DEFENSE, 2);\r\n        this.stats.put(Stats.EXPERIENCE, 20);\r\n        this.stats.put(Stats.GOLD, 10);\r\n    }\r\n\r\n    public String attack(GameCharacter enemy) {\r\n        String message;\r\n        // Se elige un número aleatorio entre 1 y 100\r\n        int random = Randomize.getRandomInt(1, 100);\r\n        // 50% de probabilidad de atacar normalmente\r\n        // 25% de probabilidad de morder\r\n        // 25% de probabilidad de lanzar una roca\r\n        int attack = (random <= 50) ? 3 : (random <= 75) ? 2 : 1;\r\n        // Se elige el ataque a realizar\r\n        switch (attack) {\r\n            case 1:\r\n                try {\r\n                    message = castPowerfulSpell(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            La bruja malvada lanza un poderoso hechizo y te hace 10 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            case 2:\r\n                try {\r\n                    message = castSpell(enemy);\r\n                } catch (EnemyDeathException e) {\r\n                    enemy.getStats().put(Stats.HP, 0);\r\n                    message = \"\"\"\r\n                            La bruja malvada  te lanza un hechizco común y te hace 5 de daño.\r\n                            ¡Has muerto!\r\n                            \"\"\";\r\n                }\r\n                break;\r\n            default:\r\n                message = ((GameCharacter) this).attack(enemy);\r\n                break;\r\n        }\r\n        return message;\r\n    }\r\n\r\n    /**\r\n     * metodo para hacer el ataque \"lanza un poderoso hechizo\"\r\n     *\r\n     * @param enemy El personaje enemigo recibirá el ataque\r\n     */\r\n\r\n    protected String castPowerfulSpell(GameCharacter enemy) throws EnemyDeathException{\r\n        int damage = 10;\r\n        int newHP = reduceHP(enemy, damage);\r\n        String enemyName = enemy.getName();\r\n        String message = String.format(\"\"\"\r\n                ¡%s lanza un poderoso hehcizo a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n        return message;\r\n    }\r\n\r\n    /**\r\n     * Metodo para hacer el ataque \"lanza un hechizo debil\"\r\n     *\r\n     * @param enemy El personaje enemigo recibirá el ataque\r\n     */\r\n    protected String castSpell(GameCharacter enemy) throws EnemyDeathException{\r\n        int damage = 5;\r\n        int newHP = reduceHP(enemy, damage);\r\n        String enemyName = enemy.getName();\r\n        String message = String.format(\"\"\"\r\n                ¡%s lanza un hechizo debil a %s por %d de daño!\r\n                %s tiene %d HP restantes.\r\n                \"\"\", this.name, enemyName, damage, enemyName, newHP);\r\n        return message;\r\n\r\n    }\r\n    @Override\r\n    public ImageIcon getSprite() {\r\n\r\n        return ImageCache.getImageIcon(\"evil_witch\");\r\n    }\r\n\r\n}\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/src/rpg/entities/enemies/witches/EvilWitch.java b/src/rpg/entities/enemies/witches/EvilWitch.java
+--- a/src/rpg/entities/enemies/witches/EvilWitch.java	(revision 8df909aac3ffd2a07812aeef4f3467a9f34200fa)
++++ b/src/rpg/entities/enemies/witches/EvilWitch.java	(date 1733428348624)
+@@ -6,6 +6,9 @@
+ import rpg.enums.Stats;
+ import rpg.enums.EnemyType;
+ import rpg.exceptions.EnemyDeathException;
++import rpg.utils.cache.ImageCache;
++
++import javax.swing.*;
+ 
+ public class EvilWitch extends Enemy {
+ 
+@@ -13,7 +16,7 @@
+     public EvilWitch() {
+ 
+         super("Evil Witch");
+-        ImageCache.addImage("evil_witch", "enemies/goblins/evil_witch.png");
++        ImageCache.addImage("evil_witch", "enemies/witches/witch.png");
+     }
+ 
+     @Override

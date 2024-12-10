@@ -1,0 +1,24 @@
+<changelist name="Uncommitted_changes_before_Update_at_05_12_2024_02_09_p_ m__[Changes]" date="1733429355226" recycled="false" toDelete="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2024_02_09_p_ m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 05/12/2024 02:09 p. m. [Changes]" />
+  <binary>
+    <option name="AFTER_PATH" value="src/rpg/entities/enemies/undead/Skeleton.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2024_02_09_p_ m__[Changes]/Skeleton.jpg" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="src/rpg/entities/enemies/witches/witch.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2024_02_09_p_ m__[Changes]/witch.jpg" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="src/rpg/entities/enemies/Tyson/Tyson.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2024_02_09_p_ m__[Changes]/Tyson.jpg" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="src/rpg/entities/enemies/Rogelio/Rogelio.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2024_02_09_p_ m__[Changes]/Rogelio.jpg" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="src/rpg/entities/enemies/goblins/goblin.png" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_05_12_2024_02_09_p_ m__[Changes]/goblin.png" />
+  </binary>
+</changelist>

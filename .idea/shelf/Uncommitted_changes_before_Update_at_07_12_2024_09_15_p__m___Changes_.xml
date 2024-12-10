@@ -1,0 +1,117 @@
+<changelist name="Uncommitted_changes_before_Update_at_07_12_2024_09_15_p_ m__[Changes]" date="1733627731010" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_12_2024_09_15_p_ m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 07/12/2024 09:15 p. m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/Enemy.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/gui/buttons/BaseButton.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/enums/WeaponType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/Player.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/enums/Stats.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/enums/ItemType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/gui/buttons/HoverButtonUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/undead/Skeleton.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/enums/EnemyType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" />
+    <option name="AFTER_PATH" value="production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_12_2024_09_15_p_ m__[Changes]/RookieGoblin.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/exceptions/InventoryFullException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/items/Item.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/items/armors/Armor.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/inventory/Inventory.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/witches/witch.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.class" />
+    <option name="AFTER_PATH" value="production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_12_2024_09_15_p_ m__[Changes]/Rogelio.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/goblins/goblin.png" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/exceptions/EnemyDeathException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/gui/buttons/events/AttackEvent.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/items/Equipment.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/gui/buttons/AttackButton.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/enums/BarType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/gui/MainWindow.class" />
+    <option name="AFTER_PATH" value="production/Proyecto/rpg/gui/MainWindow.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_12_2024_09_15_p_ m__[Changes]/MainWindow.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/Game$2.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/items/miscs/Misc.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/undead/Skeleton.class" />
+    <option name="AFTER_PATH" value="production/Proyecto/rpg/entities/enemies/undead/Skeleton.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_07_12_2024_09_15_p_ m__[Changes]/Skeleton.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/enums/ArmorType.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/gui/buttons/UserButton.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/Game$1.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/factory/EnemyFactory.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/enemies/Tyson/Tyson.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/exceptions/ItemNotFoundException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/GameCharacter.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="production/Proyecto/rpg/entities/Main.class" />
+  </binary>
+</changelist>

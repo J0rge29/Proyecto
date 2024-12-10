@@ -1,0 +1,68 @@
+<changelist name="Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]" date="1733859882421" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/12/2024 01:44 p. m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/gui/panels/Toppanel.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/gui/panels/Toppanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/Toppanel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/entities/enemies/witches/EvilWitch.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/entities/enemies/witches/EvilWitch.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/EvilWitch.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/gui/buttons/HoverButtonUI.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/gui/buttons/HoverButtonUI.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/HoverButtonUI.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/gui/panels/MiddlePanel.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/gui/panels/MiddlePanel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/MiddlePanel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/gui/MainWindow.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/gui/MainWindow.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/MainWindow.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/entities/enemies/undead/Skeleton.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/entities/enemies/undead/Skeleton.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/Skeleton.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/RookieGoblin.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/entities/enemies/Rogelio/Rogelio.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/Rogelio.class" />
+  </binary>
+  <binary>
+    <option name="AFTER_PATH" value="image/player/portrait.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/portrait.jpg" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/gui/labels/PlayerSpriteLabel.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/gui/labels/PlayerSpriteLabel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/PlayerSpriteLabel.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/entities/enemies/Tyson/Tyson.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/entities/enemies/Tyson/Tyson.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/Tyson.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/exceptions/InventoryFullException.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/exceptions/InventoryFullException.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/InventoryFullException.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/gui/labels/PortraitLabel.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/gui/labels/PortraitLabel.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_01_44_p_ m__[Changes]/PortraitLabel.class" />
+  </binary>
+</changelist>
