@@ -29,6 +29,8 @@ public class MainWindow extends JFrame {
 
     public MainWindow() {
         setContentPane(mainpanel);
+        pack();
+        setVisible(true);
     }
 
     private void createUIComponents() {
