@@ -14,6 +14,8 @@ public class Game {
 
     public Game() {
         this.enemy = new EvilWitch();
+
+
         this.player = new Player("Hero");
     }
 
