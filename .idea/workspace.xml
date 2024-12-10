@@ -4,14 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/panels/battlePanel.webp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/panels/mainBackground.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/image/panels/statusPanel.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/MainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" afterDir="false" />
-    </list>
+    <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -292,7 +285,15 @@
       <option name="project" value="LOCAL" />
       <updated>1733701750789</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="Merge remote-tracking branch 'origin/master'">
+      <option name="closed" value="true" />
+      <created>1733859001486</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1733859001486</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
