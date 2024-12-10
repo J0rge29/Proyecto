@@ -1,13 +1,11 @@
 package rpg.entities;
 
 import rpg.enums.Stats;
-import rpg.exceptions.ItemNotFoundException;
 import rpg.inventory.Inventory;
 import rpg.items.Item;
 import rpg.items.miscs.Misc;
 import rpg.utils.Randomize;
 
-import javax.swing.*;
 import java.io.*;
 
 
@@ -16,7 +14,6 @@ public class Player extends GameCharacter implements Serializable {
     private final Inventory inventory;
 
     public Player(String name) {
-
         super(name);
         inventory = new Inventory(15);
     }
@@ -41,7 +38,6 @@ public class Player extends GameCharacter implements Serializable {
 
     @Override
     protected void initCharacter() {
-
         stats.put(Stats.LEVEL, 1);
         stats.put(Stats.MAX_HP, 100);
         stats.put(Stats.HP, 100);

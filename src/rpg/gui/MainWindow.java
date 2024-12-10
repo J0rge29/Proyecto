@@ -6,6 +6,7 @@ import rpg.entities.enemies.Enemy;
 import rpg.entities.enemies.undead.Skeleton;
 import rpg.factory.EnemyFactory;
 import rpg.gui.labels.EnemySpriteLabel;
+import rpg.gui.labels.PlayerSpriteLabel;
 import rpg.gui.panels.BottomPanel;
 import rpg.gui.panels.MiddlePanel;
 import rpg.gui.panels.Toppanel;
@@ -31,6 +32,7 @@ public class MainWindow extends JFrame {
     private JPanel middlePanel;
     private JPanel bottomPanel;
     private JLabel EnemyLabelUI;
+    private JLabel UserHoverUI;
     private Player player;
     private Enemy enemy;
 
@@ -46,10 +48,12 @@ public class MainWindow extends JFrame {
 
     private void createUIComponents() {
         enemy= new Skeleton();
+        //player = new Player();
         topPanel = new Toppanel();
         middlePanel = new MiddlePanel();
         bottomPanel = new BottomPanel();
         EnemyLabelUI = new EnemySpriteLabel(enemy);
+        UserHoverUI = new PlayerSpriteLabel();
 
 
     }
