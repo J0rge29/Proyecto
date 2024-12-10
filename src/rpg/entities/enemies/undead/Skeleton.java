@@ -4,6 +4,7 @@ import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
 import rpg.utils.Randomize;
 import rpg.enums.EnemyType;
+import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
 
@@ -11,6 +12,11 @@ public class Skeleton extends Enemy {
 
     public Skeleton() {
         super("Skeleton");
+        ImageCache.addImage("skeleton", "enemies/Skeleton.jpg");
+    }
+
+    @Override
+    protected void initCharacter() {
         this.name = "Skeleton";
         this.stats.put(Stats.MAX_HP, 45);
         this.stats.put(Stats.HP, 45);
@@ -20,7 +26,7 @@ public class Skeleton extends Enemy {
 
     @Override
     public ImageIcon getSprite() {
-        return null;
+        return ImageCache.getImageIcon("Skeleton");
     }
 
     @Override
@@ -28,10 +34,7 @@ public class Skeleton extends Enemy {
 
     }
 
-    @Override
-    protected void initCharacter() {
 
-    }
 
     @Override
     public String attack(GameCharacter enemy) {

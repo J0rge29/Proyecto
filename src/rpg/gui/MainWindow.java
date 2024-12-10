@@ -5,9 +5,13 @@ import rpg.entities.enemies.Enemy;
 import rpg.gui.panels.BottomPanel;
 import rpg.gui.panels.MiddlePanel;
 import rpg.gui.panels.Toppanel;
+import rpg.gui.buttons.AttackButton;
+import rpg.gui.panels.MiddlePanel;
+import rpg.gui.panels.BottomPanel;
 
 import javax.swing.*;
 import java.awt.*;
+import javax.swing.JButton;
 
 public class MainWindow extends JFrame {
 

@@ -1,5 +1,5 @@
 package rpg.entities.enemies.witches;
-
+import rpg.utils.cache.ImageCache;
 
 import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
@@ -16,7 +16,10 @@ public class EvilWitch extends Enemy {
 
     public EvilWitch() {
         super("Evil Witch");
+        ImageCache.addImage("evil_witch", "enemies/Witch.jpg");
+    }
 
+    protected void initCharacter(){
         this.stats.put(Stats.MAX_HP, 40);
         this.stats.put(Stats.HP, 40);
         this.stats.put(Stats.ATTACK, 10);
@@ -51,7 +54,7 @@ public class EvilWitch extends Enemy {
 
     @Override
     public ImageIcon getSprite() {
-        return null;
+        return ImageCache.getImageIcon("evil_witch");
     }
 
     @Override
@@ -59,10 +62,7 @@ public class EvilWitch extends Enemy {
 
     }
 
-    @Override
-    protected void initCharacter() {
 
-    }
 
     @Override
     public String attack(GameCharacter enemy) {

@@ -5,6 +5,7 @@ import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
 import rpg.enums.EnemyType;
+import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
 
@@ -20,6 +21,10 @@ public class Tyson extends Enemy {
 
     public Tyson () {
         super("Tyson");
+        ImageCache.addImage("Tyson", "enemies/Tyson.jpg");
+    }
+    @Override
+    protected void initCharacter(){
         this.stats.put(Stats.MAX_HP, 150); // Vida máxima de Tyson
         this.stats.put(Stats.HP, 150); // Vida actual de Tyson
         this.stats.put(Stats.ATTACK, 8); // Ataque de Tyson
@@ -48,16 +53,11 @@ public class Tyson extends Enemy {
 
     @Override
     public ImageIcon getSprite() {
-        return null;
+        return ImageCache.getImageIcon("Tyson");
     }
 
     @Override
     public void getLoot() {
-
-    }
-
-    @Override
-    protected void initCharacter() {
 
     }
 

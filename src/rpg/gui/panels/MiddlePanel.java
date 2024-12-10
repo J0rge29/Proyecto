@@ -6,6 +6,7 @@ import javax.swing.*;
 
 
 
+
 public class MiddlePanel extends Backgroundpanel{
     @Override
 

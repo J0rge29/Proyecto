@@ -4,6 +4,7 @@ import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
 import rpg.enums.EnemyType;
+import rpg.utils.cache.ImageCache;
 
 import javax.swing.*;
 
@@ -18,6 +19,11 @@ public class Rogelio extends Enemy {
      */
     public Rogelio() {
         super("Rogelio");
+        ImageCache.addImage("Rogelio", "enemies/Rogelio.jpg");
+    }
+
+    @Override
+    protected void initCharacter(){
         this.stats.put(Stats.MAX_HP, 30); // Vida máxima de Rogelio
         this.stats.put(Stats.HP, 30); // Vida actual de Rogelio
         this.stats.put(Stats.ATTACK, 7); // Ataque de Rogelio
@@ -54,7 +60,7 @@ public class Rogelio extends Enemy {
 
     @Override
     public ImageIcon getSprite() {
-        return null;
+        return ImageCache.getImageIcon("Rogelio");
     }
 
     @Override
@@ -62,10 +68,6 @@ public class Rogelio extends Enemy {
 
     }
 
-    @Override
-    protected void initCharacter() {
-
-    }
 
     /**
      * Método que define el ataque del enemigo Kevin. Alterna entre 'Lanzamiento de Piedra' y 'Bola de Fuego'.
