@@ -12,27 +12,10 @@ import java.util.HashMap;
 public abstract class Enemy extends GameCharacter {
 
     protected String name;
-    protected HashMap<Stats, Integer> stats;
     protected EnemyType type;
 
     public Enemy(String name) {
         super(name);
-        this.stats = new HashMap<>();
-        /**
-         *	Inicialización de estadísticas con valores por defecto
-         */
-
-        this.stats.put(Stats.MAX_HP, 50);
-        this.stats.put(Stats.HP, 50);
-        this.stats.put(Stats.ATTACK, 5);
-        this.stats.put(Stats.DEFENSE, 2);
-        this.stats.put(Stats.SPEED, 5);
-        this.stats.put(Stats.DEXTERITY, 5);
-        this.stats.put(Stats.LUCK, 5);
-        this.stats.put(Stats.ACCURACY, 50);
-        this.stats.put(Stats.EVASION, 5);
-        this.stats.put(Stats.CRITICAL_HIT, 5);
-        this.stats.put(Stats.CRITICAL_DAMAGE, 10);
     }
 
     public String getEnemyType() {

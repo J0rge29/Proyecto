@@ -1,4 +1,5 @@
 package rpg.entities.enemies.undead;
+
 import rpg.entities.GameCharacter;
 import rpg.entities.enemies.Enemy;
 import rpg.enums.Stats;
@@ -12,12 +13,12 @@ public class Skeleton extends Enemy {
 
     public Skeleton() {
         super("Skeleton");
-        ImageCache.addImage("skeleton", "enemies/Skeleton.jpg");
+        ImageCache.addImage("Skeleton", "enemies/Skeleton.jpg");
     }
 
     @Override
     protected void initCharacter() {
-        this.name = "Skeleton";
+
         this.stats.put(Stats.MAX_HP, 45);
         this.stats.put(Stats.HP, 45);
         this.stats.put(Stats.ATTACK, 8);
@@ -33,7 +34,6 @@ public class Skeleton extends Enemy {
     public void getLoot() {
 
     }
-
 
 
     @Override
@@ -52,9 +52,10 @@ public class Skeleton extends Enemy {
         return "";
     }
 
-    protected void SkeletonType(){
+    protected void SkeletonType() {
         this.type = EnemyType.MEDIUM;
     }
+
     protected void boneStrike(GameCharacter enemy) {
         int damage = 4;
         enemy.getStats().put(Stats.HP, enemy.getStats().get(Stats.HP) - damage);

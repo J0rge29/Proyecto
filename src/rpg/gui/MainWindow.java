@@ -1,13 +1,15 @@
 package rpg.gui;
 
+import rpg.entities.GameCharacter;
 import rpg.entities.Player;
 import rpg.entities.enemies.Enemy;
+import rpg.entities.enemies.undead.Skeleton;
+import rpg.factory.EnemyFactory;
+import rpg.gui.labels.EnemySpriteLabel;
 import rpg.gui.panels.BottomPanel;
 import rpg.gui.panels.MiddlePanel;
 import rpg.gui.panels.Toppanel;
-import rpg.gui.buttons.AttackButton;
-import rpg.gui.panels.MiddlePanel;
-import rpg.gui.panels.BottomPanel;
+import rpg.gui.ui.EnemyLabelUI;
 
 import javax.swing.*;
 import java.awt.*;
@@ -28,6 +30,7 @@ public class MainWindow extends JFrame {
     private JScrollPane textScroll;
     private JPanel middlePanel;
     private JPanel bottomPanel;
+    private JLabel EnemyLabelUI;
     private Player player;
     private Enemy enemy;
 
@@ -42,9 +45,13 @@ public class MainWindow extends JFrame {
     }
 
     private void createUIComponents() {
+        enemy= new Skeleton();
         topPanel = new Toppanel();
-        middlePanel=new MiddlePanel();
-        bottomPanel=new BottomPanel();
+        middlePanel = new MiddlePanel();
+        bottomPanel = new BottomPanel();
+        EnemyLabelUI = new EnemySpriteLabel(enemy);
+
+
     }
 
 
