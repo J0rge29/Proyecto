@@ -10,9 +10,9 @@ public interface WindowConstants {
 
     int TOP_HEIGHT = 250;
 
-    int MIDDLE_HEIGHT = 320;
+    int MIDDLE_HEIGHT = 230;
 
-    int BOTTOM_HEIGHT = 350;
+    int BOTTOM_HEIGHT = 220;
 
     int SIMPLE_MARGIN = 18;
 
