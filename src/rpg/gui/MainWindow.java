@@ -2,6 +2,8 @@ package rpg.gui;
 
 import rpg.entities.Player;
 import rpg.entities.enemies.Enemy;
+import rpg.gui.panels.BottomPanel;
+import rpg.gui.panels.MiddlePanel;
 import rpg.gui.panels.Toppanel;
 
 import javax.swing.*;
@@ -20,6 +22,8 @@ public class MainWindow extends JFrame {
     private JButton button7;
     private JTextArea textDisplay;
     private JScrollPane textScroll;
+    private JPanel middlePanel;
+    private JPanel bottomPanel;
     private Player player;
     private Enemy enemy;
 
@@ -35,6 +39,8 @@ public class MainWindow extends JFrame {
 
     private void createUIComponents() {
         topPanel = new Toppanel();
+        middlePanel=new MiddlePanel();
+        bottomPanel=new BottomPanel();
     }
 
 

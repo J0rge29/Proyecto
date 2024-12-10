@@ -8,7 +8,7 @@ public interface WindowConstants {
 
     int WINDOW_WIDTH = 1500;
 
-    int TOP_HEIGHT = 150;
+    int TOP_HEIGHT = 250;
 
     int MIDDLE_HEIGHT = 320;
 
