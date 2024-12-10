@@ -12,7 +12,7 @@ public class BottomPanel extends Backgroundpanel {
     protected void init() {
         // Buscamos la imagen por ahora directamente en los directorios
         backgroundImage = new ImageIcon(ImageCache.addImage("bottomPanel",
-                "panels/battlePanel.png"));
+                "panels/battlePanel.webp"));
         setDimension(WindowConstants.MIDDLE_DIMENSION);
         setBorder(WindowConstants.EMPTY_BORDER);
     }
