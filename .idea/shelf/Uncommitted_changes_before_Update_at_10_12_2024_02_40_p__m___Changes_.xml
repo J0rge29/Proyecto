@@ -1,0 +1,19 @@
+<changelist name="Uncommitted_changes_before_Update_at_10_12_2024_02_40_p_ m__[Changes]" date="1733863229670" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_02_40_p_ m__[Changes]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Update at 10/12/2024 02:40 p. m. [Changes]" />
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/entities/Game.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/entities/Game.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_02_40_p_ m__[Changes]/Game.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="output/production/Proyecto/rpg/gui/MainWindow.class" />
+    <option name="AFTER_PATH" value="output/production/Proyecto/rpg/gui/MainWindow.class" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_02_40_p_ m__[Changes]/MainWindow.class" />
+  </binary>
+  <binary>
+    <option name="BEFORE_PATH" value="image/enemies/Skeleton.jpg" />
+    <option name="AFTER_PATH" value="image/enemies/Skeleton.jpg" />
+    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_10_12_2024_02_40_p_ m__[Changes]/Skeleton.jpg" />
+  </binary>
+</changelist>
