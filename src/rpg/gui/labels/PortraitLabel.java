@@ -32,5 +32,17 @@ public class PortraitLabel extends JLabel {
         g2d.drawImage(icon.getImage(), 0, 0,
                 getPreferredSize().width,
                 getPreferredSize().height, this);
+        setPreferredSize(getMinDimension());
+        setSize(getMinDimension());
+        setIcon(icon);
     }
+
+    private Dimension getMinDimension() {
+
+        if (icon.getIconWidth() > 350 || icon.getIconHeight() > 184) {
+            icon = new ImageIcon(icon.getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH));
+        }
+        return new Dimension(icon.getIconWidth(), icon.getIconHeight());
+    }
+
 }

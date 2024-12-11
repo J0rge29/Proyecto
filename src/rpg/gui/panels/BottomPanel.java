@@ -1,7 +1,10 @@
 package rpg.gui.panels;
 
+import rpg.gui.MainWindow;
 import rpg.gui.WindowConstants;
 import rpg.utils.cache.ImageCache;
+import rpg.gui.buttons.events.AttackEvent;
+import rpg.gui.buttons.AttackButton;
 
 import javax.swing.*;
 
@@ -16,7 +19,6 @@ public class BottomPanel extends Backgroundpanel {
         setDimension(WindowConstants.MIDDLE_DIMENSION);
         setBorder(WindowConstants.EMPTY_BORDER);
     }
-
 
 
 }

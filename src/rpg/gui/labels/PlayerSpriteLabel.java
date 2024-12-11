@@ -25,7 +25,7 @@ public class PlayerSpriteLabel extends PortraitLabel {
     private Dimension getMinDimension() {
 
         if (icon.getIconWidth() > 350 || icon.getIconHeight() > 184) {
-            icon = new ImageIcon(icon.getImage().getScaledInstance(450, 250, Image.SCALE_SMOOTH));
+            icon = new ImageIcon(icon.getImage().getScaledInstance(150, 100, Image.SCALE_SMOOTH));
         }
         return new Dimension(icon.getIconWidth(), icon.getIconHeight());
     }

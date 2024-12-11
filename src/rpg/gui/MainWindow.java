@@ -1,16 +1,18 @@
 package rpg.gui;
 
-import rpg.entities.GameCharacter;
 import rpg.entities.Player;
 import rpg.entities.enemies.Enemy;
 import rpg.entities.enemies.undead.Skeleton;
-import rpg.factory.EnemyFactory;
-import rpg.gui.labels.EnemySpriteLabel;
-import rpg.gui.labels.PlayerSpriteLabel;
+import rpg.gui.buttons.AttackButton;
+import rpg.gui.buttons.FleeButton;
+import rpg.gui.buttons.SkillsButton;
+import rpg.gui.buttons.events.FleeEvent;
+import rpg.gui.labels.*;
 import rpg.gui.panels.BottomPanel;
 import rpg.gui.panels.MiddlePanel;
 import rpg.gui.panels.Toppanel;
-import rpg.gui.ui.EnemyLabelUI;
+import rpg.gui.buttons.events.AttackEvent;
+import rpg.enums.BarType;
 
 import javax.swing.*;
 import java.awt.*;
@@ -25,16 +27,24 @@ public class MainWindow extends JFrame {
     private JButton button4;
     private JPanel topPanel;
     private JButton button5;
-    private JButton button6;
+    protected JButton button6;
     private JButton button7;
+    private JButton button8;
     private JTextArea textDisplay;
     private JScrollPane textScroll;
     private JPanel middlePanel;
     private JPanel bottomPanel;
     private JLabel EnemyLabelUI;
     private JLabel UserHoverUI;
+    private JLabel exampleLabel;
     private Player player;
     private Enemy enemy;
+    private JButton jButton;
+    private BottomPanel game;
+    private JLabel lifeLabel;
+    private JLabel magicLabel;
+    private JLabel expLabel;
+    private JLabel goldLabel;
 
     public static void main(String[] args) {
         new MainWindow();
@@ -48,14 +58,20 @@ public class MainWindow extends JFrame {
 
     private void createUIComponents() {
         enemy= new Skeleton();
-        //player = new Player();
         topPanel = new Toppanel();
         middlePanel = new MiddlePanel();
         bottomPanel = new BottomPanel();
         EnemyLabelUI = new EnemySpriteLabel(enemy);
         UserHoverUI = new PlayerSpriteLabel();
-
-
+        button5 = new AttackButton(this);
+        button6= new FleeButton(this);
+        button7= new SkillsButton();
+        exampleLabel = new PortraitLabel();
+        textDisplay = new JTextArea();
+        lifeLabel = new BarLabel(100, 100, BarType.LIFE);
+        magicLabel = new BarLabel(30, 100, BarType.MAGIC);
+        expLabel = new BarLabel(0, 350, BarType.EXPERIENCE);
+        goldLabel = new GoldLabel();
     }
 
 

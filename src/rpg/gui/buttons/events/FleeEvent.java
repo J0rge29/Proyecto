@@ -1,6 +1,5 @@
 package rpg.gui.buttons.events;
 
-
 import rpg.entities.Player;
 import rpg.entities.enemies.Enemy;
 import rpg.gui.MainWindow;
@@ -8,11 +7,10 @@ import rpg.gui.MainWindow;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AttackEvent implements ActionListener {
-
+public class FleeEvent implements ActionListener {
     private final MainWindow game;
 
-    public AttackEvent(MainWindow game) {
+    public FleeEvent(MainWindow game) {
 
         this.game = game;
     }
@@ -24,10 +22,10 @@ public class AttackEvent implements ActionListener {
         Enemy enemy = this.game.getEnemy();
         Player player = this.game.getPlayer();
         if (enemy != null) {
-            this.game.appendText(player.attack(enemy));
-            if (enemy.isAlive())
-                this.game.appendText(enemy.attack(player));
-            //this.game.checkGameStatus();
+            this.game.appendText(String.valueOf(player.tryToFlee()));
+            this.game.appendText(enemy.attack(player));
+            //this.game.checkImage();
         }
     }
+
 }
