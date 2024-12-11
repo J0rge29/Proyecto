@@ -5,39 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f1988fd4-e346-4053-9acf-fd3b1999a9eb" name="Changes" comment="Merge remote-tracking branch 'origin/master'">
-      <change afterPath="$PROJECT_DIR$/image/bars/life_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/bars/magic_bar.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/bars/magic_container.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/image/bars/magic_icon.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/FleeButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/SkillsButton.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/events/FleeEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2024_02_08_p__m___Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_03_12_2024_02_08_p_ m__[Changes]/shelved.patch" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/image/enemies/Goblin.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/enums/BarType.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/enums/BarType.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/MainWindow.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/MainWindow.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/UIConstants.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/UIConstants.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/buttons/AttackButton.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/buttons/AttackButton.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/buttons/events/AttackEvent.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/buttons/events/AttackEvent.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/labels/EnemySpriteLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/labels/EnemySpriteLabel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/labels/PlayerSpriteLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/labels/PlayerSpriteLabel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/labels/PortraitLabel.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/labels/PortraitLabel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/panels/BottomPanel.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/panels/BottomPanel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/ui/HoverButtonUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/ui/HoverButtonUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/ui/UserHoverUI.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/gui/ui/UserHoverUI.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/enums/BarType.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/enums/BarType.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/MainWindow.form" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/MainWindow.form" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/MainWindow.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/UIConstants.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/UIConstants.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/AttackButton.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/buttons/events/AttackEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/buttons/events/AttackEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/labels/EnemySpriteLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/labels/EnemySpriteLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/labels/PlayerSpriteLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PlayerSpriteLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/labels/PortraitLabel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/panels/BottomPanel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/ui/HoverButtonUI.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/rpg/gui/ui/UserHoverUI.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/gui/ui/UserHoverUI.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/enemies/Goblin.jpeg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/enemies/Rogelio.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/enemies/Rogelio.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/enemies/Tyson.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/enemies/Tyson.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/enemies/Witch.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/enemies/Witch.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/image/player/Player.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/image/player/Player.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/output/production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" beforeDir="false" afterPath="$PROJECT_DIR$/output/production/Proyecto/rpg/entities/enemies/goblins/RookieGoblin.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/rpg/entities/enemies/goblins/RookieGoblin.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +41,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/J0rge29/Proyecto.git&quot;,
-    &quot;accountId&quot;: &quot;03657545-5edc-4e85-9ae4-43dc9cb7bd30&quot;
+    &quot;accountId&quot;: &quot;4fc3cf8f-952f-4126-b9b6-d101b5775fa1&quot;
   }
 }</component>
   <component name="ProblemsViewState">
@@ -82,40 +58,37 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.GUIForm.executor": "Run",
-    "Application.MainWindow.executor": "Run",
-    "Application.Mainwindow.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "252",
-    "git-widget-placeholder": "master",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/HP/IdeaProjects/Proyecto/image/bars",
-    "onboarding.tips.debug.path": "C:/Users/HP/IdeaProjects/Proyecto/src/Main.java",
-    "project.structure.last.edited": "Project",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.GUIForm.executor&quot;: &quot;Run&quot;,
+    &quot;Application.MainWindow.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Mainwindow.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;252&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/MSI 15/IdeaProjects/Proyecto2&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/HP/IdeaProjects/Proyecto/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
   },
-  "keyToStringList": {
-    "com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File": [
-      "JavaFX",
-      "CSS"
+  &quot;keyToStringList&quot;: {
+    &quot;com.intellij.ide.scratch.ScratchImplUtil$2/New Scratch File&quot;: [
+      &quot;JavaFX&quot;,
+      &quot;CSS&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\HP\IdeaProjects\Proyecto\image\bars" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\HP\IdeaProjects\Proyecto\image\bars" />
-      <recent name="C:\Users\HP\IdeaProjects\Proyecto\fonts" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\player" />
+      <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\enemies" />
       <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\panels" />
       <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\labels" />
       <recent name="C:\Users\MSI 15\IdeaProjects\Proyecto2\image\icons" />
@@ -338,63 +311,7 @@
       <option name="project" value="LOCAL" />
       <updated>1733859100479</updated>
     </task>
-    <task id="LOCAL-00021" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733860436439</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1733860436439</updated>
-    </task>
-    <task id="LOCAL-00022" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733860488053</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1733860488053</updated>
-    </task>
-    <task id="LOCAL-00023" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733863132044</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1733863132044</updated>
-    </task>
-    <task id="LOCAL-00024" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733863165027</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1733863165027</updated>
-    </task>
-    <task id="LOCAL-00025" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733863203873</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1733863203873</updated>
-    </task>
-    <task id="LOCAL-00026" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733866251100</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1733866251100</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Merge remote-tracking branch 'origin/master'">
-      <option name="closed" value="true" />
-      <created>1733866311887</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1733866311887</updated>
-    </task>
-    <option name="localTasksCounter" value="28" />
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

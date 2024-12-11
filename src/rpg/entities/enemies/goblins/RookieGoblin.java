@@ -21,7 +21,7 @@ public class RookieGoblin extends Enemy{
     public RookieGoblin() {
 
         super("Rookie Goblin");
-        ImageCache.addImage("rookie_goblin", "enemies/Goblin.jpeg");
+        ImageCache.addImage("rookie_goblin", "enemies/Goblin.jpg");
     }
 
     @Override
